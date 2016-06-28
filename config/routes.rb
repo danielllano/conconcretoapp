@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'pages#confirmation'
-
   get 'pages/confirmation'
 
   # Example of regular route:
