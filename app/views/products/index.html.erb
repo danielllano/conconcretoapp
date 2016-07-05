@@ -1,0 +1,9 @@
+<h1>PRODUCTOS</h1>
+
+<% @products.each do |product| %>
+  <div class="produt">
+    <h3><%= link_to product.name, product_path(product) %></h3>
+    <p><%= product.description %></p>
+    <h4><%="#{product.points} puntos"%></h4>
+  </div>
+<% end %>
