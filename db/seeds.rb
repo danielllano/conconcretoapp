@@ -5,3 +5,41 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+products_list = [
+  {
+    name: "Colchon 1.40 COUNTRY",
+    description: "Comodo colchon semidoble",
+    points: "100",
+    available_qty: "5"
+  },
+  {
+    name: "Colchon 1.40 URBAN",
+    description: "Comodo colchon doble ideal para la habitacion principal de su apartacho",
+    points: "115",
+    available_qty: "3"
+  },
+  {
+    name: "Mesa Odesa",
+    description: "Mesa para exteriores resistente al sol y al agua en acero inoxidable",
+    points: "85",
+    available_qty: "4"
+  },
+  {
+    name: "Ropero Ferrara",
+    description: "Mueble con gran capacidad. Ideal como closet externo o para guardar tus sabanas y toallas",
+    points: "95",
+    available_qty: "2"
+  },
+  {
+    name: "Equipo de sonido",
+    description: "Poderos equipo de sonido con 1200W de salida como para despelucar a los vecinos!",
+    points: "70",
+    available_qty: "3"
+  },
+]
+
+products_list.each do |product|
+  Product.create(product)
+end
+
