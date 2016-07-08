@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
+  resources :users, only: [:show, :edit, :update]
+
   resources :products, only: [:index, :show]
 
-  devise_for :users
-  root 'pages#confirmation'
+
+  root 'users#show'
   get 'pages/confirmation'
 
   # Example of regular route:
