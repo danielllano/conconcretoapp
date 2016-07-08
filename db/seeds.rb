@@ -6,8 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-products_list = [
-  {
+
+
+# PROYECTOS
+[{
+    name: "Montebianco",
+    page_url: "http://montebianco.com.co/"
+  }
+].each do |project|
+  Project.create(project) unless Project.exists?(name: project[:name])
+end
+
+
+# PRODUCTOS
+[{
     name: "Colchon 1.40 COUNTRY",
     description: "Comodo colchon semidoble",
     points: "100",
@@ -36,10 +48,29 @@ products_list = [
     description: "Poderos equipo de sonido con 1200W de salida como para despelucar a los vecinos!",
     points: "70",
     available_qty: "3"
-  },
-]
+  }
+].each do |product|
+  Product.create(product) unless Product.exists?(name: product[:name])
+end
 
-products_list.each do |product|
-  Product.create(product)
+
+# PARAMETROS
+[{
+    key: "pronto pago",
+    value: "100",
+    unit: "puntos"
+  },
+  {
+    key: "redes sociales",
+    value: "5",
+    unit: "puntos"
+  },
+  {
+    key: "referido",
+    value: "50",
+    unit: "puntos"
+  }
+].each do |parameter|
+  Parameter.create(parameter) unless Parameter.exists?(key: parameter[:key])
 end
 
