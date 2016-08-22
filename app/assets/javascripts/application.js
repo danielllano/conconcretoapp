@@ -13,5 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
+//= require jquery-1.11.0.min
+//= require bootstrap.min
+//= require jquery.scrollTo.min
+//= require jquery.cookie
+//= require owl.carousel.min
+//= require respond.min
+//= require main
+//= require front
 //= require_tree .

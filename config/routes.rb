@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show], path: 'productos'
 
 
-  root 'users#show'
+  root 'pages#home'
+
   get 'pages/confirmation'
+  get 'pages/home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
