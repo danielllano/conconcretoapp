@@ -1,11 +1,11 @@
 /* variant 7  - turquoise */
-/* 
-========================================= 
-========================================= 
+/*
+=========================================
+=========================================
 
-Hunter Hipster E-commerce Theme By Bootstrapious.com      
+Hunter Hipster E-commerce Theme By Bootstrapious.com
 
-========================================= 
+=========================================
 ========================================= */
 /*
 
@@ -46,7 +46,7 @@ NAVBAR
 .topbar__search .form-control {
   border: solid 1px transparent;
   border-bottom: solid 1px #555555;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   background: #eee;
@@ -67,7 +67,7 @@ NAVBAR
   z-index: 1003;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 14px;
   background: #fff;
@@ -246,7 +246,7 @@ section {
   font-family: "Georgia", "Times New Roman", Times, serif;
 }
 .roboto {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -493,7 +493,7 @@ button i.fa {
   margin: 30px 10px 10px -71px;
   color: #fff;
   background-color: #4fbfa8;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 .ribbon .theribbon:before,
 .ribbon .theribbon:after {
@@ -844,7 +844,7 @@ INTRO
 }
 /* breadcrumbs */
 .breadcrumb {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-align: center;
@@ -922,7 +922,7 @@ INTRO
   font-weight: 700;
 }
 .panel.sidebar-menu ul.nav.category-menu li a {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 .panel.sidebar-menu ul.nav ul {
   list-style: none;
@@ -1158,7 +1158,7 @@ INTRO
   color: #555555;
   text-align: center;
   text-decoration: none;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 .product__main .sizes a.active,
 .quick-view .sizes a.active,
@@ -1177,7 +1177,7 @@ INTRO
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 .product__details {
   margin-top: 30px;
@@ -1436,7 +1436,7 @@ SLIDERS
   height: 400px;
 }
 .page-top .author-date-top {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #999999;
@@ -1458,7 +1458,7 @@ SLIDERS
   color: #4fbfa8;
 }
 .post .author-category {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #999999;
@@ -1473,7 +1473,7 @@ SLIDERS
   color: #4fbfa8;
 }
 .post .date-comments {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #999999;
@@ -1543,7 +1543,7 @@ SLIDERS
   font-size: 12px;
 }
 #blog-post .comment .reply {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 #blog-post .comment.last {
   margin-bottom: 0;
@@ -1688,7 +1688,7 @@ SLIDERS
   padding: 20px 0;
   font-size: 12px;
   line-height: 28px;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -1796,7 +1796,7 @@ SLIDERS
 }
 /* navbar */
 .navbar {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   min-height: 50px;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -2104,7 +2104,7 @@ hr {
 /* buttons  */
 .btn {
   font-weight: 700;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 6px 12px;
@@ -2281,7 +2281,7 @@ fieldset[disabled] .btn-white.active {
 }
 /* labels */
 .label {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -2331,7 +2331,7 @@ label {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 12px;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: bold;
 }
 .pager li {
@@ -2360,7 +2360,7 @@ label {
 /* pagination */
 .pagination {
   margin: 20px 0;
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   border-radius: 0;
 }
 .pagination > li > a,
@@ -2435,7 +2435,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 900;
   line-height: 1.2;
   color: #333333;
