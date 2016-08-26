@@ -5,4 +5,7 @@ class PagesController < ApplicationController
 
   def confirmation
   end
+
+  def construction
+  end
 end
