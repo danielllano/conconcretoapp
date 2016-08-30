@@ -14,6 +14,10 @@ gem 'devise', '~>3.4.1'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+group :development do
+  gem 'rails_real_favicon'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
