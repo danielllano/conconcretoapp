@@ -48,6 +48,84 @@ end
     description: "Poderos equipo de sonido con 1200W de salida como para despelucar a los vecinos!",
     points: "70",
     available_qty: "3"
+  },
+  {
+    name: "Lampara dorada",
+    description: "Elegante lampara dorada perfecta para mesas de noche, escritorios, estudios o lo que sea. Bajo consumo",
+    points: "70",
+    available_qty: "3"
+  },
+  {
+    name: "Colchon 1.40 COUNTRY 2",
+    description: "Comodo colchon semidoble",
+    points: "100",
+    available_qty: "5"
+  },
+  {
+    name: "Colchon 1.40 URBAN 2",
+    description: "Comodo colchon doble ideal para la habitacion principal de su apartacho",
+    points: "115",
+    available_qty: "3"
+  },
+  {
+    name: "Mesa Odesa 2",
+    description: "Mesa para exteriores resistente al sol y al agua en acero inoxidable",
+    points: "85",
+    available_qty: "4"
+  },
+  {
+    name: "Ropero Ferrara 2",
+    description: "Mueble con gran capacidad. Ideal como closet externo o para guardar tus sabanas y toallas",
+    points: "95",
+    available_qty: "2"
+  },
+  {
+    name: "Equipo de sonido 2",
+    description: "Poderos equipo de sonido con 1200W de salida como para despelucar a los vecinos!",
+    points: "70",
+    available_qty: "3"
+  },
+  {
+    name: "Lampara dorada 2",
+    description: "Elegante lampara dorada perfecta para mesas de noche, escritorios, estudios o lo que sea. Bajo consumo",
+    points: "70",
+    available_qty: "3"
+  },
+  {
+    name: "Colchon 1.40 COUNTRY 3",
+    description: "Comodo colchon semidoble",
+    points: "100",
+    available_qty: "5"
+  },
+  {
+    name: "Colchon 1.40 URBAN 3",
+    description: "Comodo colchon doble ideal para la habitacion principal de su apartacho",
+    points: "115",
+    available_qty: "3"
+  },
+  {
+    name: "Mesa Odesa 3",
+    description: "Mesa para exteriores resistente al sol y al agua en acero inoxidable",
+    points: "85",
+    available_qty: "4"
+  },
+  {
+    name: "Ropero Ferrara 3",
+    description: "Mueble con gran capacidad. Ideal como closet externo o para guardar tus sabanas y toallas",
+    points: "95",
+    available_qty: "2"
+  },
+  {
+    name: "Equipo de sonido 3",
+    description: "Poderos equipo de sonido con 1200W de salida como para despelucar a los vecinos!",
+    points: "70",
+    available_qty: "3"
+  },
+  {
+    name: "Lampara dorada 3",
+    description: "Elegante lampara dorada perfecta para mesas de noche, escritorios, estudios o lo que sea. Bajo consumo",
+    points: "70",
+    available_qty: "3"
   }
 ].each do |product|
   Product.create(product) unless Product.exists?(name: product[:name])

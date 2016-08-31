@@ -4,9 +4,9 @@
       <div class="topbar__content row">
 
         <div class="col-sm-4 col-sm-offset-4 topbar__logo">
-          <a href="/">
+          <%= link_to root_path do %>
             <%= image_tag("logo-montebianco.png", class: "topbar__logo__img") %>
-          </a>
+          <% end %>
         </div>
 
         <!-- <div class="col-sm-3 hidden-xs">
