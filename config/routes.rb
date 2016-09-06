@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show], path: 'productos'
 
+  get 'product/quick_view' => 'products#quick_view'
+
 
   root 'pages#home'
 
