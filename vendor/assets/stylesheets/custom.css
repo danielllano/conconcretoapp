@@ -109,7 +109,7 @@
   text-decoration: none;
 }
 .navbar .navbar-collapse {
-  background: #eeeeee;
+  background: #ffffff;
 }
 
 .heading {
@@ -183,6 +183,10 @@ fieldset[disabled] .btn-yellow.active {
 
 .no-uppercase {
   text-transform: none;
+}
+
+.grey-row {
+  background-color: #eeeeee !important;
 }
 
 @media (min-width: 992px) {

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update], path: 'usuario'
 
-  resources :products, only: [:index, :show], path: 'productos'
+  resources :products, only: [:index, :show, :new, :create], path: 'productos'
 
   get 'product/quick_view' => 'products#quick_view'
 

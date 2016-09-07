@@ -1,11 +1,11 @@
-<div role="navigation" class="navbar navbar-default grey-row">
+<div role="navigation" class="navbar navbar-default <%= row_color %>">
   <div class="container">
     <div class="navbar-header">
       <!-- <button type="button" data-toggle="collapse" data-target=".collapsed-search" class="navbar-toggle btn btn-transparent"><i class="fa fa-search"></i><span class="sr-only">Toggle navigation</span></button> -->
       <!-- <a href="pages/construction" class="navbar-toggle btn btn-transparent"><i class="fa fa-shopping-cart"></i><span class="hidden-xs">3 Items in cart</span></a> -->
       <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggle btn btn-transparent"><i class="fa fa-align-justify"></i><span class="sr-only">Toggle navigation</span></button>
     </div>
-    <div id="navigation" class="collapse navbar-collapse">
+    <div id="navigation" class="collapse navbar-collapse <%= row_color %>">
       <ul class="nav navbar-nav">
         <li><a href="pages/construction">Iniciar Sesión</a></li>
         <li><%= link_to 'Productos', products_path %></li>

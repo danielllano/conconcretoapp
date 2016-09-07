@@ -5,7 +5,13 @@
         <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
         <div class="row quick-view product-main">
           <div class="col-sm-6">
-            <div class="quick-view-main-image"><%= image_tag("detailbig1.jpg", class: "img-responsive") %></div>
+
+            <div class="tab-content">
+              <div role="tabpanel" class="quick-view-main-image tab-pane active" id="image1"><%= image_tag @product.image1.url(:medium), class: "img-responsive" %></div>
+              <div role="tabpanel" class="quick-view-main-image tab-pane" id="image2"><%= image_tag @product.image2.url(:medium), class: "img-responsive" %></div>
+              <div role="tabpanel" class="quick-view-main-image tab-pane" id="image3"><%= image_tag @product.image3.url(:medium), class: "img-responsive" %></div>
+            </div>
+
             <div class="ribbon ribbon-quick-view sale">
               <div class="theribbon">SALE</div>
               <div class="ribbon-background"></div>
@@ -14,11 +20,19 @@
               <div class="theribbon">NEW</div>
               <div class="ribbon-background"></div>
             </div>
-            <div class="row thumbs">
-              <div class="col-xs-4"><a href="img/detailbig1.jpg" class="thumb"><%= image_tag("detailsmall1.jpg", class: "img-responsive") %></a></div>
-              <div class="col-xs-4"><a href="img/detailbig2.jpg" class="thumb"><%= image_tag("detailsmall2.jpg", class: "img-responsive") %></a></div>
-              <div class="col-xs-4"><a href="img/detailbig3.jpg" class="thumb"><%= image_tag("detailsmall3.jpg", class: "img-responsive") %></a></div>
+
+
+            <div class="row thumbs nav nav-tabs" role="tablist">
+              <div class="col-xs-4 active" role="presentation"><a href="#image1" aria-controls="image1" role="tab" data-toggle="tab" class="thumb"><%= image_tag @product.image1.url(:small), class: "img-responsive" %></a></div>
+              <% if !@product.image2.blank? %>
+                <div class="col-xs-4 active" role="presentation"><a href="#image2" aria-controls="image2" role="tab" data-toggle="tab" class="thumb"><%= image_tag @product.image2.url(:small), class: "img-responsive" %></a></div>
+              <% end %>
+              <% if !@product.image3.blank? %>
+                <div class="col-xs-4 active" role="presentation"><a href="#image3" aria-controls="image3" role="tab" data-toggle="tab" class="thumb"><%= image_tag @product.image3.url(:small), class: "img-responsive" %></a></div>
+              <% end %>
             </div>
+
+
           </div>
           <div class="col-sm-6">
             <h2 class="product__heading"><%= @product.name %></h2>

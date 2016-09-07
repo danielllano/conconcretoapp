@@ -1,4 +1,4 @@
-<%= render 'layouts/navbar' %>
+<%= render 'layouts/navbar', row_color: "white-row" %>
 
 <div class="container">
   <div class="row">
@@ -19,7 +19,13 @@
     <div class="col-md-12">
       <div class="row product__main">
         <div class="col-sm-5 col-sm-offset-1">
-          <div class="mainImage"><img src="img/detailbig1.jpg" alt="" class="img-responsive"></div>
+
+          <div class="tab-content">
+            <div role="tabpanel" class="main-image tab-pane active" id="image1"><%= image_tag @product.image1.url(:medium), class: "img-responsive" %></div>
+            <div role="tabpanel" class="main-image tab-pane" id="image2"><%= image_tag @product.image2.url(:medium), class: "img-responsive" %></div>
+            <div role="tabpanel" class="main-image tab-pane" id="image3"><%= image_tag @product.image3.url(:medium), class: "img-responsive" %></div>
+          </div>
+
           <div class="ribbon sale">
             <div class="theribbon">SALE</div>
             <div class="ribbon-background"></div>
@@ -28,11 +34,17 @@
             <div class="theribbon">NEW</div>
             <div class="ribbon-background"></div>
           </div>
-          <div class="row product__thumbs">
-            <div class="col-xs-4"><a href="img/detailbig1.jpg" class="thumb"><img src="img/detailsmall1.jpg" alt="" class="img-responsive"></a></div>
-            <div class="col-xs-4"><a href="img/detailbig2.jpg" class="thumb"><img src="img/detailsmall2.jpg" alt="" class="img-responsive"></a></div>
-            <div class="col-xs-4"><a href="img/detailbig3.jpg" class="thumb"><img src="img/detailsmall3.jpg" alt="" class="img-responsive"></a></div>
+
+          <div class="row product__thumbs nav nav-tabs" role="tablist">
+            <div class="col-xs-4 active" role="presentation"><a href="#image1" aria-controls="image1" role="tab" data-toggle="tab" class="thumb"><%= image_tag @product.image1.url(:small), class: "img-responsive" %></a></div>
+            <% if !@product.image2.blank? %>
+              <div class="col-xs-4 active" role="presentation"><a href="#image2" aria-controls="image2" role="tab" data-toggle="tab" class="thumb"><%= image_tag @product.image2.url(:small), class: "img-responsive" %></a></div>
+            <% end %>
+            <% if !@product.image3.blank? %>
+              <div class="col-xs-4 active" role="presentation"><a href="#image3" aria-controls="image3" role="tab" data-toggle="tab" class="thumb"><%= image_tag @product.image3.url(:small), class: "img-responsive" %></a></div>
+            <% end %>
           </div>
+
         </div>
         <div class="col-sm-4 col-sm-offset-1">
           <form>
@@ -67,15 +79,15 @@
           </div> -->
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
-          <!-- similar products-->
+
           <section class="products-similar">
             <div class="row">
               <div class="col-md-3 col-sm-6">
                 <h3>You may also like these products</h3>
               </div>
-              <!-- product-->
+
               <div class="col-md-3 col-sm-6">
                 <div class="product">
                   <div class="image"><a href="detail.html"><img src="img/product2.jpg" alt="" class="img-responsive"></a>
@@ -88,8 +100,7 @@
                   </div>
                 </div>
               </div>
-              <!-- /product-->
-              <!-- product-->
+
               <div class="col-md-3 col-sm-6">
                 <div class="product">
                   <div class="image"><a href="detail.html"><img src="img/product3.jpg" alt="" class="img-responsive"></a>
@@ -102,8 +113,7 @@
                   </div>
                 </div>
               </div>
-              <!-- /product-->
-              <!-- product-->
+
               <div class="col-md-3 col-sm-6">
                 <div class="product">
                   <div class="image"><a href="detail.html"><img src="img/product1.jpg" alt="" class="img-responsive"></a>
@@ -116,21 +126,17 @@
                   </div>
                 </div>
               </div>
-              <!-- /product-->
             </div>
           </section>
-          <!-- /similar products-->
         </div>
-      </div>
-      <div class="row">
+      </div> -->
+      <!-- <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
-          <!-- recent products-->
           <section>
             <div class="row">
               <div class="col-md-3 col-sm-6">
                 <h3>Products viewed recently</h3>
               </div>
-              <!-- product-->
               <div class="col-md-3 col-sm-6">
                 <div class="product">
                   <div class="image"><a href="detail.html"><img src="img/product2.jpg" alt="" class="img-responsive"></a>
@@ -143,8 +149,6 @@
                   </div>
                 </div>
               </div>
-              <!-- /product-->
-              <!-- product-->
               <div class="col-md-3 col-sm-6">
                 <div class="product">
                   <div class="image"><a href="detail.html"><img src="img/product3.jpg" alt="" class="img-responsive"></a>
@@ -157,8 +161,6 @@
                   </div>
                 </div>
               </div>
-              <!-- /product-->
-              <!-- product-->
               <div class="col-md-3 col-sm-6">
                 <div class="product">
                   <div class="image"><a href="detail.html"><img src="img/product1.jpg" alt="" class="img-responsive"></a>
@@ -171,12 +173,10 @@
                   </div>
                 </div>
               </div>
-              <!-- /product-->
             </div>
           </section>
-          <!-- /recent products-->
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
