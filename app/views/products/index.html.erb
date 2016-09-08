@@ -1,3 +1,4 @@
+<% total_productos = @products.count %>
 <%= render 'layouts/navbar', row_color: "white-row" %>
 
 <div class="container">
@@ -19,10 +20,15 @@
     <div class="col-md-12">
       <div class="info-bar">
         <div class="row">
-          <% total_productos = @products.count %>
           <% lower_limit = ((@products.current_page * 12) - 11) %>
           <% upper_limit = total_productos > (@products.current_page * 12) ? (@products.current_page * 12) : total_productos %>
-          <div class="col-sm-12 col-md-4 products-showing"><%="#{lower_limit} - #{upper_limit} de " %><strong><%= total_productos %> productos</strong></div>
+          <div class="col-sm-12 col-md-4 products-showing">
+            <% if total_productos > 0 %>
+              <%= "#{lower_limit} - #{upper_limit} de " %><strong><%= total_productos %> productos</strong>
+            <% else %>
+              <strong>0 productos</strong>
+            <% end %>
+          </div>
           <!-- <div class="col-sm-12 col-md-8 products-number-sort">
             <div class="row">
               <div class="form-inline">
@@ -44,21 +50,27 @@
       </div>
       <div class="row products">
         <!-- product-->
-        <% @products.each do |product| %>
-          <div class="col-md-4 col-sm-6">
-            <div class="product">
-              <div class="image">
-                <%= link_to product_path(product) do %>
-                  <%= image_tag product.image1.url(:medium), class: "img-responsive" %>
-                <% end %>
-                <div class="quick-view-button"><%= link_to 'Vista rápida', product_quick_view_path(id: product.id), remote: true, class:"btn btn-default btn-sm quick-view-btn" %></div>
-              </div>
-              <div class="card-text">
-                <!-- <p class="brand"><a href="#">Quiksilver</a></p> -->
-                <h3><%= link_to product.name, product_path(product) %></h3>
-                <p class="price"><%="#{product.points} puntos"%></p>
+        <% if total_productos > 0 %>
+          <% @products.each do |product| %>
+            <div class="col-md-4 col-sm-6">
+              <div class="product">
+                <div class="image">
+                  <%= link_to product_path(product) do %>
+                    <%= image_tag product.image1.url(:medium), class: "img-responsive" %>
+                  <% end %>
+                  <div class="quick-view-button"><%= link_to 'Vista rápida', product_quick_view_path(id: product.id), remote: true, class:"btn btn-default btn-sm quick-view-btn" %></div>
+                </div>
+                <div class="card-text">
+                  <!-- <p class="brand"><a href="#">Quiksilver</a></p> -->
+                  <h3><%= link_to product.name, product_path(product) %></h3>
+                  <p class="price"><%="#{product.points} puntos"%></p>
+                </div>
               </div>
             </div>
+          <% end %>
+        <% else %>
+          <div class="col-md-12 col-sm-12" style="margin-bottom: 50px;">
+            <h3 class="grey-text text-center">No hay productos disponibles</h3>
           </div>
         <% end %>
         <!-- /product-->

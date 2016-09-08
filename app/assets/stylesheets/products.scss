@@ -7,3 +7,33 @@
     margin-bottom: 40px;
   }
 }
+
+.products {
+  .product {
+    .image {
+      img {
+        height: 350px;
+        width: auto;
+      }
+    }
+  }
+}
+
+.nav-tabs {
+  .thumb {
+    img {
+      height: 145px;
+      width: auto;
+    }
+  }
+}
+
+.tab-content {
+  .tab-pane {
+    img {
+      height: 450px;
+      width: auto;
+    }
+  }
+}
+
