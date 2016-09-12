@@ -1,3 +1,5 @@
+
+
 <div id="intro-slider">
   <div style="background-image: url(<%= asset_path 'intro1.jpg' %>);" class="item intro-item">
     <!-- <div class="overlay"></div> -->
@@ -23,10 +25,7 @@
 <!-- /#intro-slider-->
 
 
-<%= render 'layouts/navbar', row_color: "grey-row" %>
-
-
-<div class="grey-row">
+<div class="white-row">
   <div class="container">
     <section>
       <!-- <div class="row">
@@ -54,7 +53,7 @@
   </div>
 </div>
 
-<div class="white-row">
+<!-- <div class="white-row">
   <div class="container">
     <section>
       <div class="row">
@@ -77,7 +76,7 @@
                 <div class="quick-view-button"><%= link_to 'Vista rápida', product_quick_view_path(id: product.id), remote: true, class:"btn btn-default btn-sm quick-view-btn" %></div>
               </div>
               <div class="card-text">
-                <!-- <p class="brand"><a href="#">Quiksilver</a></p> -->
+                <p class="brand"><a href="#">Quiksilver</a></p>
                 <h3><%= link_to product.name, product_path(product) %></h3>
                 <p class="price"><%="#{product.points} puntos"%></p>
               </div>
@@ -88,7 +87,7 @@
 
     </section>
   </div>
-</div>
+</div> -->
 
 <!-- <div style="background-image: url(<%= asset_path 'slider3.jpg' %>);" class="bar background-image-fixed color-white text-center"> -->
 <div class="grey-row bar text-center">

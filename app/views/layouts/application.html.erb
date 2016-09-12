@@ -17,6 +17,7 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
+  <div class="head-spacer"></div>
   <% flash.each do |name, msg| %>
     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
   <% end %>

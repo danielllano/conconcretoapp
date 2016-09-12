@@ -1,14 +1,40 @@
 /* Theme styles modifications */
+
+.header {
+  height: 150px;
+  position: fixed;
+}
+.head-spacer {
+  padding-top: 150px;
+}
+@media (max-width: 991px) {
+  .header {
+    height: 112px;
+  }
+  .head-spacer {
+    padding-top: 112px;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    position: initial;
+    height: auto;
+  }
+  .head-spacer {
+    padding-top: 0;
+  }
+}
+
 .topbar {
   background: #fff;
   box-shadow: 0 1px 5px #ccc;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .topbar__logo__img {
     width: 110px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .topbar__logo__img {
     width: 160px;
   }
@@ -102,14 +128,28 @@
   margin-bottom: 0px;
   padding-top: 30px;
   padding-bottom: 30px;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  border: none;
+}
+@media (max-width: 991px) {
+  .navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 .navbar ul.nav > li > a {
   text-decoration: none;
 }
+.navbar ul.nav > li > a:hover {
+  text-decoration: underline;
+}
+
 .navbar .navbar-collapse {
   background: #ffffff;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar .navbar-collapse {
+    font-size: 11px;
+  }
 }
 
 .heading {
@@ -193,4 +233,16 @@ fieldset[disabled] .btn-yellow.active {
   .footer__block .row {
     margin-bottom: 0;
   }
+}
+
+.post {
+  margin-top: 60px;
+}
+
+.bar {
+  margin: 0;
+}
+
+.breadcrumb {
+  margin-top: 20px;
 }

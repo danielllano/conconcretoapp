@@ -3,15 +3,15 @@
     <div class="container">
       <div class="topbar__content row">
 
-        <div class="col-sm-4 col-sm-offset-4 topbar__logo">
+        <div class="col-sm-2 topbar__logo">
           <%= link_to root_path do %>
             <%= image_tag("logo-montebianco.png", class: "topbar__logo__img") %>
           <% end %>
         </div>
 
-        <!-- <div class="col-sm-3 hidden-xs">
-          <div class="topbar__cart"><a href="basket.html" class="btn btn-transparent"><i class="fa fa-shopping-cart"></i><span>3 Items in cart</span></a></div>
-        </div> -->
+        <div class="col-sm-8">
+          <%= render 'layouts/navbar', row_color: "white-row" %>
+        </div>
 
         <!-- <div class="col-sm-3 col-sm-offset-1 hidden-xs">
           <form class="topbar__search">
