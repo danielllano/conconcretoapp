@@ -26,6 +26,9 @@ module Conconcretoapp
       config.assets.paths << bower_path
     end
 
+    # Autoload lib files
+    config.autoload_paths << Rails.root.join('lib')
+
     # Precompile Theme fonts
     config.assets.precompile << %r(fonts/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
 

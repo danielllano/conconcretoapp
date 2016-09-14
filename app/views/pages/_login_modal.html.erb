@@ -1,0 +1,29 @@
+<div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <%= image_tag("logo-white-small.png", class: "img-responsive white-logo") %>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+          <div class="login-input-field text-input">
+            <i class="fa fa-at input-icon"></i>
+            <%= f.email_field :email, :autofocus => true, :placeholder => "email" %></div>
+          <div class="login-input-field text-input">
+            <i class="fa fa-lock input-icon"></i>
+            <%= f.password_field :password, :placeholder => "contraseña"%>
+          </div>
+          <div class="login-input-field checkbox-input">
+            <% if devise_mapping.rememberable? %>
+              <div><%= f.check_box :remember_me %> <%= f.label "Recordar mi contraseña" %></div>
+            <% end %>
+          </div>
+          <div class="submit-btn">
+            <%= f.submit "Entrar", class: "btn btn-yellow" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,11 @@
   </div>
   <div id="navigation" class="collapse navbar-collapse <%= row_color %>">
     <ul class="nav navbar-nav">
-      <li><a href="pages/construction">Iniciar Sesión</a></li>
+      <% unless user_signed_in? %>
+        <li><%= link_to "Iniciar Sesión", "#loginModal", "data-toggle" => "modal" %></li>
+      <% else %>
+        <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
+      <% end %>
       <li><%= link_to 'Productos', products_path %></li>
       <li><a href="pages/construction">Contacto</a></li>
       <li><a href="pages/construction" class="navbar-cart"><i class="fa fa-shopping-cart"></i><span>Redimir</span></a></li>

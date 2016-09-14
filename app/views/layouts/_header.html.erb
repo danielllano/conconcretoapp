@@ -1,8 +1,11 @@
 <header class="header">
+  <div class="sponsor-container">
+    <%= image_tag("conconcreto.png") %>
+  </div>
+
   <div class="topbar">
     <div class="container">
       <div class="topbar__content row">
-
         <div class="col-sm-2 topbar__logo">
           <%= link_to root_path do %>
             <%= image_tag("logo-montebianco.png", class: "topbar__logo__img") %>
@@ -12,6 +15,8 @@
         <div class="col-sm-8">
           <%= render 'layouts/navbar', row_color: "white-row" %>
         </div>
+
+
 
         <!-- <div class="col-sm-3 col-sm-offset-1 hidden-xs">
           <form class="topbar__search">
@@ -25,6 +30,7 @@
       </div>
     </div>
   </div>
+  <div class="gradient-border"></div>
   <!-- <div role="navigation" class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">

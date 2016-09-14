@@ -1,3 +1,93 @@
+#loginModal{
+  background-color: #ffffff;
+  opacity: 0.85;
+  .modal-header {
+    border-bottom: none;
+    .white-logo {
+      margin: 0 auto;
+    }
+  }
+  .modal-dialog {
+    margin-top: 10%;
+  }
+  .modal-content {
+    background: rgba(0, 92, 138, 1);
+    box-shadow: none;
+    border: 10px solid rgba(214, 214, 229, 0.9);
+  }
+  .modal-body, .login-input-field {
+    text-align: center;
+    margin: 5px;
+  }
+  .checkbox-input {
+    display: inline-block;
+    text-align: left;
+  }
+  .text-input {
+    color: rgb(113,113,154);
+    i.input-icon {
+      position: absolute;
+      margin: 10px;
+      font-size: 16px;
+    }
+  }
+  .text-input input {
+    height: 35px;
+    padding: 10px 10px 10px 30px;
+    border-radius: 4px;
+    border-width: 0;
+    background: rgba(214, 214, 229, 1);
+  }
+  .checkbox-input{
+    color: #ffffff;
+  }
+  .submit-btn .btn {
+    border-radius: 3px;
+  }
+
+  @media (min-width: 768px) {
+    .modal-header {
+      .white-logo {
+        width: 230px;
+      }
+    }
+    .checkbox-input, .text-input input {
+      width: 230px;
+    }
+  }
+}
+
+.header {
+  .sponsor-container {
+    display: inline-block;
+    background: #00628A;
+    padding: 10px;
+    position: fixed;
+    right: 50px;
+    z-index: 10000;
+    img {
+      width: 130px;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .header {
+    .sponsor-container {
+      img {
+        width: 90px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    .sponsor-container {
+      right: 0px;
+      position: absolute;
+    }
+  }
+}
+
 #navigation {
   a.navbar-cart {
     i {
