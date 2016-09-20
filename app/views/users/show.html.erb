@@ -1,9 +1,135 @@
-<%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %>
+<div class="white-row big-header-row">
+  <div style="background-image: url(<%= asset_path 'intro1.jpg' %>);" class="profile-background">
+    <div class="overlay" style=<%= flash.present? ? "top:186px;" : "" %>></div>
+    <div class="content">
+      <div class="container">
+        <div class="row user-info">
+          <div class="col-sm-5 col-xs-12">
+            <% if @user.avatar.present? %>
+              <div class="image"><%= image_tag @user.avatar.url(:medium), class: "user-photo" %></div>
+            <% else %>
+              <div class="image"><%= image_tag("user-default.png", class: "user-photo") %></div
+            <% end %>
+            <p><strong><%= "#{@user.name} #{@user.last_name}" %></strong></p>
+            <p><%= @user.email %></p>
+            <p><%= @user.address %></p>
+            <p><%= @user.phone %></p>
+            <p><%= @user.mobile_phone %></p>
+            <p class="banner-cta"><div class="btn btn-yellow">mis puntos</div></p>
+            <p><%= @user.points %></p>
+          </div>
+          <div class="col-sm-7 col-xs-12">
+            <%= image_tag('user-profile-text', class: "profile-header-text-img hidden-xs") %>
+            <div class="edit-profile-cta-wrapper">
+              <%= link_to 'Editar perfil', edit_user_path(current_user) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h1><%= "#{@user.name} #{@user.last_name}" %></h1>
-<p><%= "#{@user.points} puntos" %></p>
-<p><%= @user.address %></p>
-<p><%= @user.phone %></p>
-<p><%= @user.mobile_phone %></p>
+<div class="white-row">
+  <div class="container">
+    <section class="user-purchases">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="heading">
+            <h4 class="no-capitalized">Mis redenciones</h4>
+            <p class="text-muted">Estos son los productos que has cambiado</p>
+          </div>
+          <!-- <h3 class="grey-text text-center">Todavía no has redimido ningún producto :(</h3> -->
+        </div>
+      </div>
 
-<%= link_to 'Editar perfil', edit_user_path(current_user) %>
+      <div class="col-md-3 col-xs-6">
+        <div class="product">
+          <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+          </div>
+          <div class="card-text">
+            <h3> <a href="#">Lampara dorada</a></h3>
+            <p class="price">143 puntos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="product">
+          <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+          </div>
+          <div class="card-text">
+            <h3> <a href="#">Lampara dorada</a></h3>
+            <p class="price">113 puntos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="product">
+          <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+          </div>
+          <div class="card-text">
+            <h3> <a href="#">Lampara dorada</a></h3>
+            <p class="price">121 puntos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="product">
+          <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+          </div>
+          <div class="card-text">
+            <h3> <a href="#">Lampara dorada</a></h3>
+            <p class="price">121 puntos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="product">
+          <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+          </div>
+          <div class="card-text">
+            <h3> <a href="#">Lampara dorada</a></h3>
+            <p class="price">143 puntos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="product">
+          <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+          </div>
+          <div class="card-text">
+            <h3> <a href="#">Lampara dorada</a></h3>
+            <p class="price">113 puntos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="product">
+          <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+          </div>
+          <div class="card-text">
+            <h3> <a href="#">Lampara dorada</a></h3>
+            <p class="price">121 puntos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-xs-6">
+        <div class="product">
+          <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+          </div>
+          <div class="card-text">
+            <h3> <a href="#">Lampara dorada</a></h3>
+            <p class="price">121 puntos</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+
+
+
+
+

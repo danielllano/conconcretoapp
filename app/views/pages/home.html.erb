@@ -37,9 +37,19 @@
       </div> -->
       <div class="row">
         <div class="col-sm-4 post">
-          <a href="pages/construction" class="margin-bottom image"><%= image_tag("card-perfil.jpg", class: "img-responsive img-border") %></a>
-          <div class="card-text"><h3><a href="pages/construction">Perfil de Usuario</a></h3></div>
+          <% if user_signed_in? %>
+            <%= link_to user_path(current_user), class: "margin-bottom image" do %>
+              <%= image_tag("card-perfil.jpg", class: "img-responsive img-border") %>
+            <% end %>
+            <div class="card-text"><h3><%= link_to 'Perfil de Usuario', user_path(current_user) %></h3></div>
+          <% else %>
+            <%= link_to "#loginModal", "data-toggle" => "modal", class: "margin-bottom image" do %>
+              <%= image_tag("card-perfil.jpg", class: "img-responsive img-border") %>
+            <% end %>
+            <div class="card-text"><h3><%= link_to 'Perfil de Usuario', "#loginModal", "data-toggle" => "modal" %></h3></div>
+          <% end %>
         </div>
+
         <div class="col-sm-4 post">
           <%= link_to products_path, class: "margin-bottom image" do %>
             <%= image_tag("card-productos.jpg", class: "img-responsive img-border") %>

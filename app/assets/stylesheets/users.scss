@@ -1,3 +1,99 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$background-height: calc(100% - 160px);
+
+.big-header-row{
+  height: $background-height;
+  .overlay {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 135px;
+    width: 100%;
+    height: $background-height;
+    background: #fff;
+    opacity: 0.9;
+    filter: alpha(opacity=40);
+    z-index: 2;
+  }
+  .content{
+    position: relative;
+    z-index: 3;
+    padding: 60px;
+    p {
+      color: #777777;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    .btn-yellow {
+      margin-top: 20px;
+    }
+  }
+  .image {
+    margin-bottom: 20px;
+    .user-photo{
+      height: 200px;
+      border-radius: 25px;
+    }
+  }
+  .profile-header-text-img{
+    width: 80%;
+    margin-top: 20%;
+  }
+  .edit-profile-cta-wrapper {
+    text-align: right;
+    position: relative;
+    bottom: -90px;
+  }
+}
+.profile-background {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.user-purchases {
+  .heading {
+    text-align: left;
+    margin-bottom: 50px;
+    .no-capitalized {
+      text-transform: none;
+    }
+  }
+}
+
+.edit-cta-group {
+  margin-top: 35px;
+}
+
+@media (max-width: 991px) {
+  .big-header-row{
+    .overlay {
+      top: 97px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .big-header-row{
+    height: auto;
+    .overlay {
+      top: 148px;
+    }
+    .user-info{
+      text-align: center;
+    }
+    .edit-profile-cta-wrapper {
+      text-align: center;
+      bottom: -20px;
+    }
+  }
+  .profile-background {
+    height: auto;
+    background: none !important;
+  }
+  .edit-cta-group {
+    .btn {
+      margin-bottom: 10px;
+    }
+  }
+
+}

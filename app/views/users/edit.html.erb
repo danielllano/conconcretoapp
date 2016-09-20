@@ -1,55 +1,67 @@
-<h1>Editar perfil</h1>
+<div class="white-row big-header-row">
+  <div style="background-image: url(<%= asset_path 'intro1.jpg' %>);" class="profile-background">
+    <div class="overlay" style=<%= flash.present? ? "top:186px;" : "" %>></div>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <h3 class="grey-text text-center margin-bottom">Edita tu datos de perfil</h3>
+          <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+            <%= form_for @user, html: { multipart: true } do |f| %>
+              <% if @user.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@user.errors.count, "error") %> Usuario no pudo ser actualizado:</h2>
 
-<%= form_for @user, html: { multipart: true } do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> Usuario no pudo ser actualizado:</h2>
+                  <ul>
+                  <% @user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+              <div class="form-group col-sm-6 col-xs-12">
+                <%= f.label :avatar, 'Foto de perfil' %><br>
+                <%= f.file_field :avatar, class: "form-control" %>
+              </div>
+
+              <div class="form-group col-sm-6 col-xs-12">
+                <%= f.label :email, 'Email (con el que inicias sesión)' %><br>
+                <%= f.text_field :email, class: "form-control" %>
+              </div>
+
+              <div class="form-group col-sm-6 col-xs-12">
+                <%= f.label :name, "Nombre" %><br>
+                <%= f.text_field :name, class: "form-control" %>
+              </div>
+
+              <div class="form-group col-sm-6 col-xs-12">
+                <%= f.label :last_name, "Apellidos" %><br>
+                <%= f.text_field :last_name, class: "form-control" %>
+              </div>
+
+              <div class="form-group col-sm-6 col-xs-12">
+                <%= f.label :address, "Dirección" %><br>
+                <%= f.text_field :address, class: "form-control" %>
+              </div>
+
+              <div class="form-group col-sm-6 col-xs-12">
+                <%= f.label :phone, "Teléfono" %><br>
+                <%= f.text_field :phone, class: "form-control" %>
+              </div>
+
+              <div class="form-group col-sm-6 col-xs-12">
+                <%= f.label :mobile_phone, "Celular" %><br>
+                <%= f.text_field :mobile_phone, class: "form-control" %>
+              </div>
+
+              <div class="form-group col-xs-12 edit-cta-group">
+                <%= f.submit "Guardar cambios", class: "btn btn-primary" %>
+                <%= link_to 'Cancelar', user_path(current_user), class: "btn" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-<!--   <div class="form-group">
-    <%= f.label :image %><br>
-    <%= f.file_field :image, class: "form-control" %>
-  </div> -->
-
-  <div class="form-group">
-    <%= f.label :email %><br>
-    <%= f.text_field :email, class: "form-control" %>
-    <span>Si modificas este campo, este email será tu nuevo usuario para ingresar a tu cuenta</span>
   </div>
-
-  <div class="form-group">
-    <%= f.label :name, "Nombre" %><br>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :last_name, "Apellidos" %><br>
-    <%= f.text_field :last_name, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :address, "Dirección" %><br>
-    <%= f.text_field :address, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :phone, "Teléfono" %><br>
-    <%= f.text_field :phone, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :mobile_phone, "Celular" %><br>
-    <%= f.text_field :mobile_phone, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit "Guardar cambios", class: "btn btn-primary" %>
-  </div>
-<% end %>
+</div>
