@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'pages/confirmation'
   get 'pages/home'
   get 'pages/construction'
+  get 'pages/faq', path: 'preguntas-frecuentes'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

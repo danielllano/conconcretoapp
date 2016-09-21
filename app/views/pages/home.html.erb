@@ -5,7 +5,13 @@
     <!-- <div class="overlay"></div> -->
     <div class="content">
       <p><%= image_tag("logo-white-small.png", class: "img-responsive white-logo") %></p>
-      <p class="banner-cta"><a href="pages/construction" class="btn btn-yellow">mis puntos</a></p>
+      <p class="banner-cta">
+        <% if user_signed_in? %>
+            <%= link_to 'mis puntos', user_path(current_user), class: "btn btn-yellow margin-top" %>
+        <% else %>
+          <%= link_to 'mis puntos', "#loginModal", "data-toggle" => "modal", class: "btn btn-yellow margin-top" %>
+        <% end %>
+      </p>
     </div>
   </div>
   <div style="background-image: url(<%= asset_path 'intro2.jpg' %>);" class="item intro-item">
@@ -110,7 +116,11 @@
         <h3 class="grey-text">¡CONOCE LOS PRODUCTOS QUE ESPERAN POR TI!</h3>
         <p class="two-line-text";">Acumula tus puntos, ingresa, redimelos</p>
         <p class="two-line-text";"><strong>y llévate increibles premios.</strong> </p>
-        <a href="pages/construction" class="btn btn-yellow margin-top">mis puntos</a>
+        <% if user_signed_in? %>
+            <%= link_to 'mis puntos', user_path(current_user), class: "btn btn-yellow margin-top" %>
+        <% else %>
+          <%= link_to 'mis puntos', "#loginModal", "data-toggle" => "modal", class: "btn btn-yellow margin-top" %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -121,17 +131,26 @@
     <div id="blog-homepage" class="row">
       <div class="col-sm-6">
         <div class="post">
-          <div class="image"><a href="pages/construction"><%= image_tag("blue-card1.jpg", class: "img-responsive") %></a></div>
+          <div class="image">
+            <%= link_to pages_faq_path do %>
+              <%= image_tag("blue-card1.jpg", class: "img-responsive") %>
+            <% end %>
+          </div>
           <div class="card-text"><h3>¿Cómo puedo ganar puntos?</h3></div>
-          <p class="read-more"><a href="pages/construction" class="btn btn-yellow">VER MÁS</a></p>
+          <p class="read-more"><%= link_to 'VER MAS', pages_faq_path, class: "btn btn-yellow" %></p>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="post">
-          <div class="image"><a href="pages/construction"><%= image_tag("blue-card2.jpg", class: "img-responsive") %></a></div>
+          <div class="image">
+            <%= link_to pages_faq_path do %>
+              <%= image_tag("blue-card2.jpg", class: "img-responsive") %>
+            <% end %>
+          </div>
           <div class="card-text"><h3>¿Cómo puedo redimir mis puntos?</h3></div>
-          <p class="read-more"><a href="pages/construction" class="btn btn-yellow">VER MÁS</a></p>
+          <p class="read-more"><%= link_to 'VER MAS', pages_faq_path, class: "btn btn-yellow" %></p>
         </div>
+
       </div>
     </div>
   </section>

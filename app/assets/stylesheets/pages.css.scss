@@ -172,3 +172,12 @@
   }
 }
 
+#text-page {
+  .question {
+    padding: 20px 0;
+  }
+  .question:last-child {
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }
+}
