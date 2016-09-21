@@ -6,6 +6,11 @@
   </div>
   <div id="navigation" class="collapse navbar-collapse <%= row_color %>">
     <ul class="nav navbar-nav">
+      <li>
+        <%= link_to root_path, class: "navbar-cart" do %>
+          <i class="fa fa-home"></i>
+        <% end %>
+      </li>
       <% unless user_signed_in? %>
         <li><%= link_to "Iniciar Sesión", "#loginModal", "data-toggle" => "modal" %></li>
       <% else %>
@@ -13,7 +18,11 @@
       <% end %>
       <li><%= link_to 'Productos', products_path %></li>
       <li><a href="pages/construction">Contacto</a></li>
-      <li><a href="pages/construction" class="navbar-cart"><i class="fa fa-shopping-cart"></i><span>Redimir</span></a></li>
+      <li>
+        <%= link_to shopping_cart_show_path, class: "navbar-cart" do %>
+          <i class="fa fa-shopping-cart"></i><span>Redimir</span>
+        <% end %>
+      </li>
     </ul>
   </div>
   <!-- <div class="collapsed-search collapse">

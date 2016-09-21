@@ -12,7 +12,7 @@
     height: 92px;
   }
   .head-spacer {
-    padding-top: 96px;
+    padding-top: 86px;
   }
 }
 @media (max-width: 767px) {
@@ -163,6 +163,9 @@
   .navbar .navbar-collapse {
     font-size: 11px;
   }
+  .navbar ul.nav > li > a {
+    padding: 10px 9px;
+  }
 }
 
 .heading {
@@ -263,4 +266,55 @@ fieldset[disabled] .btn-yellow.active {
 .alert {
   text-align: center;
   margin-bottom: 0;
+}
+
+.page-top-middle {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 45px;
+  padding-bottom: 30px;
+}
+.page-top-middle h1 {
+  font-size: 43.2px;
+  text-transform: none;
+  margin-top: 20px;
+}
+@media (max-width: 991px) {
+  .page-top-middle h1 {
+    font-size: 32px;
+  }
+}
+.page-top-middle:after {
+  display: none;
+}
+
+.box .box-header {
+  background: #777777;
+  margin: -20px -20px 0px;
+  padding: 20px;
+  border-bottom: none;
+}
+.box .box-header h4{
+  color: #fff;
+  text-transform: none;
+  text-align: center;
+}
+
+#order-summary table td,
+#order-summary table th {
+  border: none;
+  color: #777;
+}
+#order-summary table tr.total td,
+#order-summary table tr.total th {
+  border-top: 2px solid #ddd;
+}
+#order-summary.box {
+  border: none;
+  background: #eeeeee;
+}
+
+#basket .table tbody tr td,
+#basket .table tbody tr td a {
+  color: #777;
 }

@@ -1,0 +1,133 @@
+<div class="white-row middle-header-row">
+  <div style="background-image: url(<%= asset_path 'intro1.jpg' %>);" class="profile-background">
+    <div class="overlay" style=<%= flash.present? ? "top:186px;" : "" %>></div>
+    <div class="content">
+      <div class="container">
+        <div class="col-md-12">
+          <div class="row page-top-middle">
+            <div class="col-sm-10 col-sm-offset-1">
+              <h5 class="grey-text">CARRITO DE COMPRAS</h5>
+              <h1 class="grey-text">Redime tus puntos Montebianco</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container cart-container">
+  <div id="basket" class="col-md-9">
+    <div class="box">
+      <form method="post" action="checkout1.html">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th colspan="2">Producto</th>
+                <th>Cantidad</th>
+                <th>Puntos por unidad</th>
+                <th colspan="2">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="#"><%= image_tag("lamp1.jpg", class: "thumb-img") %></a></td>
+                <td><a href="#">Lampara de mesa</a></td>
+                <td><input type="number" value="2" class="form-control"></td>
+                <td>85</td>
+                <td>170</td>
+                <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+              </tr>
+              <tr>
+                <td><a href="#"><%= image_tag("desklamp1.jpg", class: "thumb-img") %></a></td>
+                <td><a href="#">Lampara de escritorio</a></td>
+                <td><input type="number" value="2" class="form-control"></td>
+                <td>100</td>
+                <td>200</td>
+                <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="box-footer">
+          <div class="pull-left"><a href="#" class="btn btn-default btn-yellow"><i class="fa fa-chevron-left"></i> Continuar comprando</a></div>
+          <div class="pull-right">
+            <button class="btn btn-default btn-yellow"><i class="fa fa-refresh"></i> Actualizar carrito</button>
+            <button type="submit" class="btn btn-primary btn-yellow">Redimir <i class="fa fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- productos destacados-->
+    <section class="products-similar">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <h3 class="grey-text">Otros productos que te podrían interesar</h3>
+        </div>
+        <!-- product-->
+        <div class="col-md-3 col-sm-6">
+          <div class="product">
+            <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+            </div>
+            <div class="card-text">
+              <h3> <a href="#">Lampara dorada</a></h3>
+              <p class="price">143 puntos</p>
+            </div>
+          </div>
+        </div>
+        <!-- /product-->
+        <!-- product-->
+        <div class="col-md-3 col-sm-6">
+          <div class="product">
+            <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+            </div>
+            <div class="card-text">
+              <h3> <a href="#">Lampara dorada</a></h3>
+              <p class="price">143 puntos</p>
+            </div>
+          </div>
+        </div>
+        <!-- /product-->
+        <!-- product-->
+        <div class="col-md-3 col-sm-6">
+          <div class="product">
+            <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
+            </div>
+            <div class="card-text">
+              <h3> <a href="#">Lampara dorada</a></h3>
+              <p class="price">143 puntos</p>
+            </div>
+          </div>
+        </div>
+        <!-- /product-->
+      </div>
+    </section>
+    <!-- /similar products-->
+  </div>
+  <div class="col-md-3">
+    <div id="order-summary" class="box">
+      <div class="box-header">
+        <h4>Total redimido</h4>
+      </div>
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Lampara de mesa x 2</td>
+              <th>170</th>
+            </tr>
+            <tr>
+              <td>Lampara de escritorio x 2</td>
+              <th>200</th>
+            </tr>
+            <tr class="total">
+              <td>Total:</td>
+              <th>370</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

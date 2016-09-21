@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'shopping_cart/show', path: 'carrito'
+
   devise_for :users
 
   resources :users, only: [:show, :edit, :update], path: 'usuario'

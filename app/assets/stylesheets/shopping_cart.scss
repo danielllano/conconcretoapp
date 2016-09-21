@@ -1,6 +1,6 @@
-$background-height: calc(100% - 160px);
+$background-height: 250px;
 
-.big-header-row{
+.middle-header-row{
   height: $background-height;
   .overlay {
     display: block;
@@ -44,28 +44,14 @@ $background-height: calc(100% - 160px);
     bottom: -90px;
   }
 }
-.profile-background {
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+.cart-container {
+  padding-top: 50px;
 }
 
-.user-purchases {
-  .heading {
-    text-align: left;
-    margin-bottom: 50px;
-    .no-capitalized {
-      text-transform: none;
-    }
-  }
-}
-
-.edit-cta-group {
-  margin-top: 35px;
-}
 
 @media (max-width: 991px) {
-  .big-header-row{
+  .middle-header-row{
     .overlay {
       top: 87px;
     }
@@ -73,27 +59,10 @@ $background-height: calc(100% - 160px);
 }
 
 @media (max-width: 767px) {
-  .big-header-row{
+  .middle-header-row{
     height: auto;
     .overlay {
       top: 148px;
     }
-    .user-info{
-      text-align: center;
-    }
-    .edit-profile-cta-wrapper {
-      text-align: center;
-      bottom: -20px;
-    }
   }
-  .profile-background {
-    height: auto;
-    background: none !important;
-  }
-  .edit-cta-group {
-    .btn {
-      margin-bottom: 10px;
-    }
-  }
-
 }
