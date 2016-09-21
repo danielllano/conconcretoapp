@@ -18,11 +18,20 @@
       <% end %>
       <li><%= link_to 'Productos', products_path %></li>
       <li><a href="pages/construction">Contacto</a></li>
-      <li>
-        <%= link_to shopping_cart_show_path, class: "navbar-cart" do %>
-          <i class="fa fa-shopping-cart"></i><span>Redimir</span>
-        <% end %>
-      </li>
+
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to shopping_cart_show_path, class: "navbar-cart" do %>
+            <i class="fa fa-shopping-cart"></i><span>Redimir</span>
+          <% end %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "#loginModal", "data-toggle" => "modal" do %>
+            <i class="fa fa-shopping-cart"></i><span>Redimir</span>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
   <!-- <div class="collapsed-search collapse">
