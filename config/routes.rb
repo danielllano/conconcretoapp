@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'pages/construction'
   get 'pages/faq', path: 'preguntas-frecuentes'
 
+  resource "contacts", only: [:show, :create], path: 'contacto'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

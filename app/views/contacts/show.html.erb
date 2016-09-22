@@ -1,0 +1,91 @@
+<div id="contact" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="breadcrumb">
+        <li><%= link_to 'Inicio', root_path %></li>
+        <li>Contacto</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row margin-bottom">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="heading">
+        <h2 class="grey-text">Contáctanos</h2>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <p class="text-center">¿Tienes alguna pregunta o algún problema con tus productos redimidos? Porfavor no dudes en contactarnos. Nuestro centro de servicio al cliente trabaja para ti.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-bottom">
+    <div class="col-md-4">
+      <div class="box-simple">
+        <div class="icon"><i class="fa fa-map-marker"></i></div>
+        <h3>Dirección</h3>
+        <p>Proyecto y Apto Modelo<br>Diagonal 32D #. 72A - 30<br>Barrio los Alpes<br><strong>Cartagena</strong></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="box-simple">
+        <div class="icon"><i class="fa fa-phone"></i></div>
+        <h3>Teléfono</h3>
+        <p class="text-muted">Linea de atención al cliente disponible<br>Lunes - Sábado 9am – 5pm<br>Domigos y Festivos 10am – 5pm</p>
+        <p><strong><i class="fa fa-phone"></i> 320 791 4889</strong></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="box-simple">
+        <div class="icon"><i class="fa fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p class="text-muted">Contáctanos via email o usa nuestro formulario de contacto</p>
+        <p><strong><a href="mailto:"><i class="fa fa-envelope"></i>montebianco@conconcreto.com</a></strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center margin-bottom ">
+    <div class="col-md-12">
+      <div class="heading">
+        <h2 class="grey-text">Formulario de contacto</h2>
+      </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+
+      <%= simple_form_for @contact do |f| %>
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-group">
+              <label for="firstname">Nombre y apellidos</label>
+              <%= f.input :name, input_html: { class: 'form-control' }, label: false, required: true %>
+            </div>
+          </div>
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <%= f.input :email, input_html: { class: 'form-control' }, label: false, required: true %>
+            </div>
+          </div>
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-group">
+              <label for="subject">Asunto</label>
+              <%= f.input :subject, input_html: { class: 'form-control' }, label: false, required: true %>
+            </div>
+          </div>
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <%= f.input :message, as: :text,  input_html: { class: 'form-control' }, label: false, required: true %>
+            </div>
+          </div>
+          <div class= "hidden">
+            <%= f.input :nickname, :hint => 'Deja este campo en blanco!' %>
+          </div>
+          <div class="col-sm-12 text-center">
+            <%= f.button :submit, 'Enviar mensaje', :class=> "btn btn-primary btn-yellow" %>
+          </div>
+        </div>
+        <!-- /.row-->
+      <% end %>
+    </div>
+  </div>
+  <!-- /.row-->
+</div>

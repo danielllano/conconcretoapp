@@ -17,6 +17,8 @@ gem 'will_paginate-bootstrap'
 gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
 gem 'acts_as_shopping_cart', '~> 0.2.1'
+gem 'mail_form', '~> 1.5.1'
+gem 'simple_form'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

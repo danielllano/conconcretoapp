@@ -17,7 +17,7 @@
         <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
       <% end %>
       <li><%= link_to 'Productos', products_path %></li>
-      <li><a href="pages/construction">Contacto</a></li>
+      <li><%= link_to 'Contacto', contacts_path %></li>
 
       <% if user_signed_in? %>
         <li>
