@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'montebianco.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'montebianco.herokuapp.com' }
 
   config.paperclip_defaults = {
     storage: :s3,
@@ -87,6 +87,23 @@ Rails.application.configure do
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
       s3_region: ENV.fetch('AWS_REGION'),
     }
+  }
+
+  Rails.application.routes.default_url_options[:host] = 'montebianco.herokuapp.com'
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: ENV["GMAIL_DOMAIN"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
   }
 
 end
