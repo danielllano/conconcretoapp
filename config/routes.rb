@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'shopping_cart/show', path: 'carrito'
+  post 'shopping_cart/add_product_to_cart'
 
   devise_for :users
 
