@@ -1,12 +1,11 @@
 class ShoppingCartController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
+  before_action :set_user_and_cart
 
   def show
   end
 
   def add_product_to_cart
-    @shopping_cart = ShoppingCart.find_by(user: @user)
     @shopping_cart = ShoppingCart.create(user_id: @user.id) unless @shopping_cart
     @product = Product.find(params[:product_id].to_i)
     @quantity = params[:quantity].to_i
@@ -26,9 +25,23 @@ class ShoppingCartController < ApplicationController
     redirect_to product_path(@product)
   end
 
+  def delete_item
+    @product = Product.find(params[:product_id].to_i)
+    @quantity = params[:quantity].to_i
+    if @shopping_cart.remove(@product, @quantity)
+      @product.available_qty += @quantity
+      @product.save
+      flash[:notice] = 'Item eliminado del carrito'
+    else
+      flash[:error] = 'No se pudo completar la acción deseada'
+    end
+    redirect_to shopping_cart_show_path
+  end
+
   private
 
-    def set_user
+    def set_user_and_cart
       @user = User.find(current_user.id)
+      @shopping_cart = ShoppingCart.find_by(user: @user)
     end
 end
