@@ -12,10 +12,6 @@ class ShoppingCartController < ApplicationController
     @quantity = params[:quantity].to_i
     if @product.available_qty >= @quantity
       if @shopping_cart.add(@product, @product.points, @quantity)
-        @product.available_qty -= @quantity
-        @product.save
-        # @user.points -= @product.points
-        # @user.save
         flash[:notice] = 'Producto agregado al carrito satisfactoriamente'
         redirect_to shopping_cart_show_path
       else
@@ -38,9 +34,46 @@ class ShoppingCartController < ApplicationController
   end
 
 
+  def purchase
+    enough_points = true
+    available_quantities = true
+
+    if @user.points < @shopping_cart.subtotal.to_i
+      enough_points = false
+      flash[:error] = 'No tienes suficientes puntos para redimir el contenido actual del carrito'
+      redirect_to shopping_cart_show_path
+    end
+
+    @shopping_cart.shopping_cart_items.each do |item|
+      product = Product.find(item.item_id)
+      if product.available_qty < item.quantity
+        available_quantities = false
+        flash[:error] = "El producto '#{product.name}' ya no está disponible en la cantidad deseada. Quedan #{product.available_qty} unidades disponibles"
+        redirect_to shopping_cart_show_path
+      end
+    end
+
+    if enough_points && available_quantities
+      @shopping_cart.shopping_cart_items.each do |item|
+        product = Product.find(item.item_id)
+        product.available_qty -= item.quantity
+        product.save
+        Purchase.create(user_id: @user.id, product_id: product.id, quantity: item.quantity, status: "pendind_to_send");
+      end
+      @user.points -= @shopping_cart.subtotal.to_i
+      @user.save
+      @shopping_cart.clear
+      flash[:notice] = 'Productos redimidos'
+      redirect_to shopping_cart_show_path
+    end
+
+  end
+
+
   def delete_item
     @product = Product.find(params[:product_id].to_i)
     @quantity = params[:quantity].to_i
+
     if @shopping_cart.remove(@product, @quantity)
       @product.available_qty += @quantity
       @product.save

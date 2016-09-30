@@ -79,7 +79,9 @@
               <%= link_to '#', id: "update-cart-btn", class: "btn btn-default btn-yellow" do %>
                 <i class="fa fa-refresh"></i> Actualizar carrito
               <% end %>
-              <button type="submit" class="btn btn-primary btn-yellow">Redimir <i class="fa fa-chevron-right"></i></button>
+              <%= link_to shopping_cart_purchase_path, class: "btn btn-primary btn-yellow" do %>
+                Redimir <i class="fa fa-chevron-right"></i>
+              <% end %>
             <% end %>
           </div>
         </div>
