@@ -1,6 +1,7 @@
 class ShoppingCartController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user_and_cart
+  skip_before_action :verify_authenticity_token, only: [:update_cart]
 
   def show
   end
@@ -16,14 +17,26 @@ class ShoppingCartController < ApplicationController
         # @user.points -= @product.points
         # @user.save
         flash[:notice] = 'Producto agregado al carrito satisfactoriamente'
+        redirect_to shopping_cart_show_path
       else
         flash[:error] = 'No se pudo agregar el producto al carrito'
+        redirect_to product_path(@product)
       end
     else
       flash[:error] = 'El producto no esta disponible en la cantidad que deseas'
+      redirect_to product_path(@product)
     end
-    redirect_to product_path(@product)
   end
+
+
+  def update_cart
+    params[:items_map].each do | cart_item_id, new_quantity |
+      @shopping_cart_item = ShoppingCartItem.find(cart_item_id)
+      @shopping_cart_item.update_quantity(new_quantity)
+    end
+    redirect_to shopping_cart_show_path
+  end
+
 
   def delete_item
     @product = Product.find(params[:product_id].to_i)
