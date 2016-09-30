@@ -21,5 +21,12 @@ function shoppingCart(){
       });
     }
   });
+
+  $('#basket').on('change keyup paste', '.product-qty', function(event){
+    event.preventDefault();
+    $('#purchase-cart-btn').hide();
+    $('#update-cart-btn').removeClass("hidden");
+  });
+
 }
 
