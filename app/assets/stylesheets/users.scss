@@ -58,6 +58,14 @@ $background-height: calc(100% - 160px);
       text-transform: none;
     }
   }
+  .product {
+    .image {
+      img {
+        height: 260px;
+        width: auto;
+      }
+    }
+  }
 }
 
 .edit-cta-group {
