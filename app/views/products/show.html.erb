@@ -28,14 +28,18 @@
             <% end %>
           </div>
 
-          <div class="ribbon sale">
-            <div class="theribbon">SALE</div>
-            <div class="ribbon-background"></div>
-          </div>
-          <div class="ribbon new">
-            <div class="theribbon">NEW</div>
-            <div class="ribbon-background"></div>
-          </div>
+          <% if is_not_available(@product) %>
+            <div class="ribbon sale">
+              <div class="theribbon">AGOTADO</div>
+              <div class="ribbon-background"></div>
+            </div>
+          <% end %>
+          <% if is_new(@product) %>
+            <div class="ribbon new">
+              <div class="theribbon">NUEVO</div>
+              <div class="ribbon-background"></div>
+            </div>
+          <% end %>
 
           <div class="row product__thumbs nav nav-tabs" role="tablist">
             <div class="col-xs-4 active" role="presentation"><a href="#image1" aria-controls="image1" role="tab" data-toggle="tab" class="thumb"><%= image_tag @product.image1.url(:small), class: "img-responsive" %></a></div>

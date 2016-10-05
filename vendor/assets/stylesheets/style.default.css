@@ -488,11 +488,11 @@ button i.fa {
 }
 .ribbon .theribbon {
   position: relative;
-  width: 80px;
+  width: 100px;
   padding: 6px 20px 6px 20px;
   margin: 30px 10px 10px -71px;
   color: #fff;
-  background-color: #4fbfa8;
+  background-color: red;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 .ribbon .theribbon:before,
@@ -527,6 +527,7 @@ button i.fa {
 .ribbon.new .theribbon {
   background-color: #5bc0de;
   text-shadow: 0px 1px 2px #bbb;
+  width: 80px;
 }
 .ribbon.new .theribbon:after {
   border-color: #2390b0 #2390b0 transparent transparent;

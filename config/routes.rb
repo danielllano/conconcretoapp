@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   get 'shopping_cart/show', path: 'carrito'
   post 'shopping_cart/add_product_to_cart'
   post 'shopping_cart/delete_item'
