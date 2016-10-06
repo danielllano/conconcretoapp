@@ -58,7 +58,7 @@ class ShoppingCartController < ApplicationController
         product = Product.find(item.item_id)
         product.available_qty -= item.quantity
         product.save
-        Purchase.create(user_id: @user.id, product_id: product.id, quantity: item.quantity, status: "pendind_to_send");
+        Purchase.create(user_id: @user.id, product_id: product.id, quantity: item.quantity, status: "Pendiente");
       end
       @user.points -= @shopping_cart.subtotal.to_i
       @user.save
