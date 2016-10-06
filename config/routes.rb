@@ -20,9 +20,9 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get 'pages/confirmation'
+  get 'pages/confirmation', path: 'confirmacion'
   get 'pages/home'
-  get 'pages/construction'
+  # get 'pages/construction'
   get 'pages/faq', path: 'preguntas-frecuentes'
 
   resource "contacts", only: [:show, :create], path: 'contacto'

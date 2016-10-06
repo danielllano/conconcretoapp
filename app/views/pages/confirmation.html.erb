@@ -1,0 +1,15 @@
+<div class="white-row big-header-row">
+  <div style="background-image: url(<%= asset_path 'intro1.jpg' %>);" class="profile-background">
+    <div class="overlay" style=<%= flash.present? ? "top:186px;" : "" %>></div>
+    <div class="content">
+      <div class="container">
+        <div class="row confirmation">
+          <div><%= image_tag('confirmacion-01.png', class: "confirmation-text") %></div>
+          <div><%= image_tag('confirmacion-02.png', class: "confirmation-img") %></div>
+          <p class="mt-20">Tu redención ha sido aprobada con éxito.<br>¡Felicitaciones!</p>
+          <p class="mt-20">Recuerda seguir acumulando tus puntos Montebianco<br class="hidden-xs">para que puedas seguir redimiéndolos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

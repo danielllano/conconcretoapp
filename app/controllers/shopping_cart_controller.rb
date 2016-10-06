@@ -64,7 +64,7 @@ class ShoppingCartController < ApplicationController
       @user.save
       @shopping_cart.clear
       flash[:notice] = 'Productos redimidos'
-      redirect_to shopping_cart_show_path
+      redirect_to pages_confirmation_path
     end
 
   end

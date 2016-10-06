@@ -181,3 +181,31 @@
     margin-bottom: 20px;
   }
 }
+
+.row.confirmation {
+  text-align: center;
+  .confirmation-text {
+    width: 500px;
+  }
+  .confirmation-img {
+    width: 130px;
+  }
+  p.mt-20 {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .row.confirmation {
+    .confirmation-text {
+      width: 88%;
+    }
+    .confirmation-img {
+      width: 22%;
+    }
+    p.mt-20 {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+  }
+}
