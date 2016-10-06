@@ -43,11 +43,12 @@ ActiveAdmin.register Product, as: "Producto" do
 
   show do
     attributes_table do
-      row :name
-      row :description
-      row :points
-      row :available_qty
-      row :created_at
+      row("Nombre") {|product| product.name }
+      row("Descripción") {|product| product.description }
+      row("Puntos") {|product| product.points }
+      row("Unidades") {|product| product.available_qty }
+      row("Fecha de creación") {|product| product.created_at }
+      row("Ultima modificación") {|product| product.updated_at }
       row "Foto principal", :image1 do |product|
         link_to product.image1.url do
           image_tag(product.image1.url(:small), class: "admin-thumb-img")
