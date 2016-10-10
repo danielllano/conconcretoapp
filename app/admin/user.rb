@@ -62,11 +62,37 @@ ActiveAdmin.register User, as: "Usuario" do
     f.actions
   end
 
+  action_item :view, only: :show do
+    link_to 'Agregar puntos', agregar_puntos_admin_usuario_path
+  end
+
+  member_action :agregar_puntos, :method=>:get do
+  end
+
+  member_action :add_points, :method=>:post do
+  end
+
   controller do
     def update_resource(object, attributes)
       update_method = attributes.first[:password].present? ? :update_attributes : :update_without_password
       object.send(update_method, *attributes)
     end
+
+    def agregar_puntos
+      @parameters = Parameter.all
+      @select_options = @parameters.map do |p|
+        [p.key, p.value]
+      end
+    end
+
+    def add_points
+      @user = User.find(params[:id])
+      @added_points = params[:points].to_i
+      @user.points += @added_points
+      @user.save
+      redirect_to admin_usuario_path(@user), :notice=>'Puntos agregados'
+    end
+
   end
 
 end

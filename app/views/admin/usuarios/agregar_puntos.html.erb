@@ -1,0 +1,5 @@
+<%= form_tag(add_points_admin_usuario_path, method: "post", multipart: true) do |f| %>
+  <%= label(:points, 'Selecciona parámetro de adición de puntos') %><br><br>
+  <%= select_tag(:points, options_for_select(@select_options)) %><br><br>
+  <%= submit_tag "Agregar" %>
+<% end %>
