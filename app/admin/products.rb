@@ -1,7 +1,7 @@
 ActiveAdmin.register Product, as: "Producto" do
   permit_params :name, :description, :points, :available_qty, :image1, :image2, :image3
   # menu label: "Productos"
-  menu priority: 2
+  menu priority: 3
 
   scope "Todos", :all, :default => true
 
