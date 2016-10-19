@@ -1,6 +1,6 @@
 ActiveAdmin.register User, as: "Usuario" do
 
-  permit_params :email, :password, :name, :last_name, :points, :address, :phone, :mobile_phone
+  permit_params :email, :password, :name, :last_name, :points, :address, :phone, :mobile_phone, :client_id
 
   menu priority: 2
 
@@ -17,6 +17,7 @@ ActiveAdmin.register User, as: "Usuario" do
   filter :updated_at, label: 'Ultima modificación'
 
   index do
+    column "Id. Montebianco", :client_id
     column :email
     column "Nombre", :name
     column "Apellido", :last_name
@@ -31,6 +32,7 @@ ActiveAdmin.register User, as: "Usuario" do
 
   show do
     attributes_table do
+      row("Id. Montebianco") {|user| user.client_id }
       row :email
       row("Nombre") {|user| user.name }
       row("Apellido") {|user| user.last_name }
@@ -51,6 +53,7 @@ ActiveAdmin.register User, as: "Usuario" do
 
   form do |f|
     f.semantic_errors
+    f.inputs 'Id. Montebianco', :client_id
     f.inputs :email
     f.inputs 'Constraseña', :password
     f.inputs 'Nombre', :name

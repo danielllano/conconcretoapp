@@ -8,6 +8,7 @@ class CustomFailure < Devise::FailureApp
     if http_auth?
       http_auth
     else
+      flash[:error] = "Identificación o contraseña inválidos."
       redirect_to root_path
     end
   end
