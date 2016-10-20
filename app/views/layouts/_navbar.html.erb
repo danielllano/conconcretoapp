@@ -25,10 +25,20 @@
             <i class="fa fa-shopping-cart"></i><span>Redimir</span>
           <% end %>
         </li>
+        <li>
+          <%= link_to user_path(current_user), class: "navbar-cart" do %>
+            <i class="fa fa-user"></i><span></span>
+          <% end %>
+        </li>
       <% else %>
         <li>
           <%= link_to "#loginModal", "data-toggle" => "modal" do %>
             <i class="fa fa-shopping-cart"></i><span>Redimir</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#loginModal", "data-toggle" => "modal" do %>
+            <i class="fa fa-user"></i><span></span>
           <% end %>
         </li>
       <% end %>
