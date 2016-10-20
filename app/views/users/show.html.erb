@@ -15,7 +15,9 @@
             <p><%= @user.address %></p>
             <p><%= @user.phone %></p>
             <p><%= @user.mobile_phone %></p>
-            <p>Apartamento Montebianco: <%= @user.apartment_number %></p>
+            <% if @user.apartment_number.present? %>
+              <p>Apartamento Montebianco: <%= @user.apartment_number %></p>
+            <% end %>
             <p class="banner-cta"><div class="btn btn-yellow">mis puntos</div></p>
             <p><%= @user.points %></p>
           </div>
