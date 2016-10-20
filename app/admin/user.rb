@@ -95,7 +95,9 @@ ActiveAdmin.register User, as: "Usuario" do
     def add_points
       @user = User.find(params[:id])
       @added_points = params[:points].to_i
-      @user.points += @added_points
+      @multiplier = params[:multiplier].to_i
+      @total_points = @added_points * @multiplier
+      @user.points += @total_points
       @user.save
       redirect_to admin_usuario_path(@user), :notice=>'Puntos agregados'
     end
