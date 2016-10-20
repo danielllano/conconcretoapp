@@ -1,5 +1,5 @@
 ActiveAdmin.register Purchase, as: "Redenciones"  do
-  actions :all, except: [:new, :create]
+  actions :all, except: [:new, :create, :destroy]
 
   permit_params :status
 
