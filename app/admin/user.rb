@@ -1,6 +1,6 @@
 ActiveAdmin.register User, as: "Usuario" do
 
-  permit_params :email, :password, :name, :last_name, :points, :address, :phone, :mobile_phone, :client_id
+  permit_params :email, :password, :name, :last_name, :points, :address, :phone, :mobile_phone, :client_id, :apartment_number
 
   menu priority: 2
 
@@ -13,6 +13,7 @@ ActiveAdmin.register User, as: "Usuario" do
   filter :address, label: 'Dirección'
   filter :phone, label: 'Teléfono'
   filter :mobile_phone, label: 'Celular'
+  filter :apartment_number, label: 'Apartamento'
   filter :created_at, label: 'Fecha de creación'
   filter :updated_at, label: 'Ultima modificación'
 
@@ -25,6 +26,7 @@ ActiveAdmin.register User, as: "Usuario" do
     column "Dirección", :address
     column "Teléfono", :phone
     column "Celular", :mobile_phone
+    column "Apartamento", :apartment_number
     column "Fecha de creación", :created_at
     column "Ultima modificación", :updated_at
     actions
@@ -40,6 +42,7 @@ ActiveAdmin.register User, as: "Usuario" do
       row("Dirección") {|user| user.address }
       row("Teléfono") {|user| user.phone }
       row("Celular") {|user| user.mobile_phone }
+      row("Apartamento") {|user| user.apartment_number }
       row("Fecha de creación") {|user| user.created_at }
       row("Ultima modificación") {|user| user.updated_at }
       row "Foto", :avatar do |user|
@@ -62,6 +65,7 @@ ActiveAdmin.register User, as: "Usuario" do
     f.inputs 'Dirección', :address
     f.inputs 'Teléfono', :phone
     f.inputs 'Celular', :mobile_phone
+    f.inputs 'Apartamento', :apartment_number
     f.actions
   end
 

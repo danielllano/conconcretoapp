@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019034428) do
+ActiveRecord::Schema.define(version: 20161020032957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -150,8 +150,10 @@ ActiveRecord::Schema.define(version: 20161019034428) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "client_id"
+    t.string   "apartment_number"
   end
 
+  add_index "users", ["apartment_number"], name: "index_users_on_apartment_number", unique: true, using: :btree
   add_index "users", ["client_id"], name: "index_users_on_client_id", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
