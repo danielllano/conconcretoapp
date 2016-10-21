@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'pages/home'
   # get 'pages/construction'
   get 'pages/faq', path: 'preguntas-frecuentes'
+  get 'pages/terms_and_conditions', path: 'terminos_y_condiciones'
 
   resource "contacts", only: [:show, :create], path: 'contacto'
 

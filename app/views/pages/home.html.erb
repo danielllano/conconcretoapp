@@ -63,8 +63,10 @@
           <div class="card-text"><h3><%= link_to 'Catálogo de productos', products_path %></h3></div>
         </div>
         <div class="col-sm-4 post">
-          <a href="pages/construction" class="margin-bottom image"><%= image_tag("card-terminos.jpg", class: "img-responsive img-border") %></a>
-          <div class="card-text"><h3><a href="pages/construction">Términos y condiciones</a></h3></div>
+          <%= link_to pages_terms_and_conditions_path, class: "margin-bottom image" do %>
+            <%= image_tag("card-terminos.jpg", class: "img-responsive img-border") %>
+          <% end %>
+          <div class="card-text"><h3><%= link_to 'Términos y condiciones', pages_terms_and_conditions_path %></h3></div>
         </div>
       </div>
     </section>
