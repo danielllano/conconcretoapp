@@ -85,51 +85,32 @@
           </div>
         </div>
     </div>
+
     <!-- productos destacados-->
     <section class="products-similar">
       <div class="row">
         <div class="col-md-3 col-sm-6">
           <h3 class="grey-text">Otros productos que te podrían interesar</h3>
         </div>
-        <!-- product-->
-        <div class="col-md-3 col-sm-6">
-          <div class="product">
-            <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
-            </div>
-            <div class="card-text">
-              <h3> <a href="#">Lampara dorada</a></h3>
-              <p class="price">143 puntos</p>
-            </div>
-          </div>
-        </div>
-        <!-- /product-->
-        <!-- product-->
-        <div class="col-md-3 col-sm-6">
-          <div class="product">
-            <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
-            </div>
-            <div class="card-text">
-              <h3> <a href="#">Lampara dorada</a></h3>
-              <p class="price">143 puntos</p>
+        <% @relevant_products.each do |product| %>
+          <div class="col-md-3 col-sm-6">
+            <div class="product">
+              <div class="image">
+                <%= link_to product_path(product) do %>
+                  <%= image_tag product.image1.url(:medium), class: "img-responsive" %>
+                <% end %>
+              </div>
+              <div class="card-text">
+                <h3><%= link_to product.name, product_path(product) %></h3>
+                <p class="price"><%="#{product.points} puntos"%></p>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- /product-->
-        <!-- product-->
-        <div class="col-md-3 col-sm-6">
-          <div class="product">
-            <div class="image"><a href="#"><%= image_tag("lampara-dorada.jpg", class: "img-responsive") %></a>
-            </div>
-            <div class="card-text">
-              <h3> <a href="#">Lampara dorada</a></h3>
-              <p class="price">143 puntos</p>
-            </div>
-          </div>
-        </div>
-        <!-- /product-->
+        <% end %>
       </div>
     </section>
     <!-- /productos destacados-->
+
   </div>
   <div class="col-md-3">
     <div id="order-summary" class="box">

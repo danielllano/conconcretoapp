@@ -4,6 +4,7 @@ class ShoppingCartController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:update_cart]
 
   def show
+    @relevant_products = Product.all.order("points DESC").limit(3)
   end
 
   def add_product_to_cart
