@@ -3,7 +3,7 @@ ActiveAdmin.register Purchase, as: "Redenciones"  do
 
   permit_params :status
 
-  menu priority: 4
+  menu priority: 1
 
   scope "Todos", :all, :default => true
 

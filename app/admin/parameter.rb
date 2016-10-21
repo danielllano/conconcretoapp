@@ -1,7 +1,7 @@
 ActiveAdmin.register Parameter, as: "Parametro" do
 
   permit_params :key, :value
-  menu priority: 5
+  menu priority: 4
   config.filters = false
 
   index do
