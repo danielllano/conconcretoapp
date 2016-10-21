@@ -8,6 +8,22 @@ es:
         restrict_dependent_destroy:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
+    models:
+      admin_user:
+        one: "Administrador"
+        other: "Administradores"
+      parameter:
+        one: "Parametro"
+        other: "Parametros"
+      product:
+        one: "Producto"
+        other: "Productos"
+      purchase:
+        one: "Redención"
+        other: "Redenciones"
+      user:
+        one: "Usuario"
+        other: "Usuarios"
   date:
     abbr_day_names:
     - dom
@@ -142,6 +158,15 @@ es:
       header:
         one: No se pudo guardar este/a %{model} porque se encontró 1 error
         other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
+  formtastic:
+    :yes: 'Si'
+    :no: 'No'
+    :create: 'Crear %{model}'
+    :update: 'Actualizar %{model}'
+    :submit: 'Submit %{model}'
+    :cancel: 'Cancelar %{model}'
+    :reset: 'Reiniciar %{model}'
+    :required: 'requerido'
   helpers:
     select:
       prompt: Por favor seleccione
