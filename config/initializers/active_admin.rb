@@ -205,10 +205,10 @@ ActiveAdmin.setup do |config|
     config.namespace :admin do |admin|
   #
   #     # Disable the links entirely
-      admin.download_links = false
+  #     admin.download_links = false
   #
   #     # Only show XML & PDF options
-  #     admin.download_links = [:xml, :pdf]
+      admin.download_links = [:csv]
   #
   #     # Enable/disable the links based on block
   #     #   (for example, with cancan)

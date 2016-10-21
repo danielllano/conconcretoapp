@@ -41,6 +41,15 @@ ActiveAdmin.register Product, as: "Producto" do
     a truncate(product.name), :href => admin_producto_path(product)
   end
 
+  csv do
+    column("Nombre") {|product| product.name }
+    column("Descripcion") {|product| product.description }
+    column("Puntos") {|product| product.points }
+    column("Unidades") {|product| product.available_qty }
+    column("Fecha de creacion") {|product| product.created_at }
+    column("Ultima modificacion") {|product| product.updated_at }
+  end
+
   show do
     attributes_table do
       row("Nombre") {|product| product.name }

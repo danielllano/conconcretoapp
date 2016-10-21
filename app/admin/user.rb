@@ -32,6 +32,20 @@ ActiveAdmin.register User, as: "Usuario" do
     actions
   end
 
+  csv do
+    column("Id_Montebianco") {|user| user.client_id }
+    column :email
+    column("Nombre") {|user| user.name }
+    column("Apellido") {|user| user.last_name }
+    column("Puntos") {|user| user.points }
+    column("Direccion") {|user| user.address }
+    column("Telefono") {|user| user.phone }
+    column("Celular") {|user| user.mobile_phone }
+    column("Apartamento") {|user| user.apartment_number }
+    column("Fecha de creacion") {|user| user.created_at }
+    column("Ultima modificacion") {|user| user.updated_at }
+  end
+
   show do
     attributes_table do
       row("Id. Montebianco") {|user| user.client_id }

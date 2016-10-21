@@ -27,6 +27,19 @@ ActiveAdmin.register Purchase, as: "Redenciones"  do
     actions
   end
 
+  csv do
+    column("Usuario (Id montebianco)") {|purchase| purchase.user.client_id }
+    column("Id Producto") {|purchase| purchase.product.id }
+    column("Nombre Producto") {|purchase| purchase.product.name }
+    column("Cantidad redimida") {|purchase| purchase.quantity }
+    column("Direccion de usuario") {|purchase| purchase.user.address }
+    column("Telefono de usuario") {|purchase| purchase.user.phone }
+    column("Celular de usuario") {|purchase| purchase.user.mobile_phone }
+    column("Estado") {|purchase| purchase.status }
+    column("Fecha de creacion") {|purchase| purchase.created_at }
+    column("Ultima modificacion") {|purchase| purchase.updated_at }
+  end
+
   show do
     attributes_table do
       row("Usuario") {|purchase| purchase.user }
