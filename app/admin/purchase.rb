@@ -18,6 +18,7 @@ ActiveAdmin.register Purchase, as: "Redenciones"  do
   filter :updated_at, label: 'Ultima modificación'
 
   index do
+    column :id
     column("Usuario", :user, :sortable => :user_id)
     column("Producto", :product, :sortable => :product_id)
     column "Cantidad", :quantity

@@ -1,0 +1,11 @@
+¡Felicidades <%= @user.name %>!
+Tu redención ha sido aprobada con éxito.
+
+Has adquirido por medio del sistema de puntos Montebianco los siguientes productos:
+
+<% @purchases.each do |p| %>
+  * <%= p[:product] %> x <%= p[:quantity] %> unidad(es)
+<% end %>
+
+Estos te serán enviados a la dirección que tienes registrada en tu perfil de usuario.
+Recuerda seguir acumulando tus puntos Montebianco para que puedas seguir redimiéndolos.

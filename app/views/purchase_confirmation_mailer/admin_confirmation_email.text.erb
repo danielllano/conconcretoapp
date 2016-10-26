@@ -1,0 +1,18 @@
+Se ha realizado una nueva redención de puntos
+
+Productos Redimidos:
+
+<% @purchases.each do |p| %>
+  * Id. Redención: <%= p.id %>
+    Producto: <%= p.product.name %>
+    Cantidad: <%= p.quantity %> unidad(es)
+<% end %>
+
+Usuario:
+
+Id. Montebianco: <%= @user.client_id %>
+Nombre: <%= @user.name %>
+Apellidos: <%= @user.last_name %>
+Email: <%= @user.email %>
+Celular: <%= @user.mobile_phone %>
+Dirección: <%= @user.address %>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>¡Felicidades <%= @user.name %>!</h2>
+    <h2>Tu redención ha sido aprobada con éxito.</h2>
+    <p>Has adquirido por medio del sistema de puntos Montebianco los siguientes productos:</p>
+    <ul>
+      <% @purchases.each do |p| %>
+        <li><%= p.product.name %> x <%= p.quantity %> unidad(es)</li>
+      <% end %>
+    </ul>
+    <p>Estos te serán enviados a la dirección que tienes registrada en tu perfil de usuario.</p>
+    <p>Recuerda seguir acumulando tus puntos Montebianco para que puedas seguir redimiéndolos.</p>
+  </body>
+</html>

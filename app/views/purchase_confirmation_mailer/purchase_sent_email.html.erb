@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Tu redención ya está en camino</h2>
+    <p><%= @purchase.user.name %>, recientemente has adquirido por medio del sistema de puntos Montebianco <%= @purchase.quantity %> unidad(es) de <%= @purchase.product.name %>.</p>
+    <p>Esta redención ya esta en camino a la dirección:</p>
+    <p><%= @purchase.user.address %></p>
+    <p>¡Felicidades!</p>
+  </body>
+</html>

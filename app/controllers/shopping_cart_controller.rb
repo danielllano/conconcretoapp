@@ -54,16 +54,20 @@ class ShoppingCartController < ApplicationController
     end
 
     if enough_points && available_quantities
+      @user_purchases = []
       @shopping_cart.shopping_cart_items.each do |item|
         product = Product.find(item.item_id)
         product.available_qty -= item.quantity
         product.save
-        Purchase.create(user_id: @user.id, product_id: product.id, quantity: item.quantity, status: "Pendiente");
+        @new_purchase = Purchase.create(user_id: @user.id, product_id: product.id, quantity: item.quantity, status: "Pendiente");
+        @user_purchases.push(@new_purchase) if @new_purchase
       end
       @user.points -= @shopping_cart.subtotal.to_i
       @user.save
       @shopping_cart.clear
       flash[:notice] = 'Productos redimidos'
+      PurchaseConfirmationMailer.user_confirmation_email(@user, @user_purchases).deliver_later
+      PurchaseConfirmationMailer.admin_confirmation_email(@user, @user_purchases).deliver_later
       redirect_to pages_confirmation_path
     end
 

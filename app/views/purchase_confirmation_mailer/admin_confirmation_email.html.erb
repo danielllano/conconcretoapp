@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Se ha realizado una nueva redención de puntos</h1>
+    <h3>Productos Redimidos:</h3>
+    <ul>
+      <% @purchases.each do |p| %>
+        <li>
+          <p>
+            Id. Redención: <%= p.id %><br>
+            Producto: <%= p.product.name %><br>
+            Cantidad: <%= p.quantity %> unidad(es)<br>
+          </p>
+        </li>
+      <% end %>
+    </ul>
+
+    <h3>Usuario:</h3>
+    <p>
+      Id. Montebianco: <%= @user.client_id %><br>
+      Nombre: <%= @user.name %><br>
+      Apellidos: <%= @user.last_name %><br>
+      Email: <%= @user.email %><br>
+      Celular: <%= @user.mobile_phone %><br>
+      Dirección: <%= @user.address %><br>
+    </p>
+  </body>
+</html>
