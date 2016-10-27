@@ -79,7 +79,6 @@ class ShoppingCartController < ApplicationController
     @quantity = params[:quantity].to_i
 
     if @shopping_cart.remove(@product, @quantity)
-      @product.available_qty += @quantity
       @product.save
       flash[:notice] = 'Item eliminado del carrito'
     else
