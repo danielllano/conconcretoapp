@@ -21,3 +21,6 @@
 
 .env
 Procfile
+
+public/system/products
+public/system/users

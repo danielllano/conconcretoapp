@@ -1,5 +1,5 @@
 ActiveAdmin.register Product, as: "Producto" do
-  permit_params :name, :description, :points, :available_qty, :image1, :image2, :image3
+  permit_params :name, :description, :points, :available_qty, :reference, :image1, :image2, :image3
   # menu label: "Productos"
   menu priority: 3
 
@@ -12,12 +12,14 @@ ActiveAdmin.register Product, as: "Producto" do
   filter :description, label: 'Descripción'
   filter :points, label: 'Puntos'
   filter :available_qty, label: 'Unidades'
+  filter :reference, label: 'Referencia'
   filter :created_at, label: 'Fecha de creación'
   filter :updated_at, label: 'Ultima modificación'
 
   index do
+    column "Referencia", :reference
     column "Nombre", :name
-    column "Descripción", :description
+    # column "Descripción", :description
     column "Puntos", :points
     column "Unidades", :available_qty
     column "Foto", :image1 do |product|
@@ -42,6 +44,7 @@ ActiveAdmin.register Product, as: "Producto" do
   end
 
   csv do
+    column("Referencia") {|product| product.reference }
     column("Nombre") {|product| product.name }
     column("Descripcion") {|product| product.description }
     column("Puntos") {|product| product.points }
@@ -52,6 +55,7 @@ ActiveAdmin.register Product, as: "Producto" do
 
   show do
     attributes_table do
+      row("Referencia") {|product| product.reference }
       row("Nombre") {|product| product.name }
       row("Descripción") {|product| product.description }
       row("Puntos") {|product| product.points }
@@ -79,6 +83,7 @@ ActiveAdmin.register Product, as: "Producto" do
 
   form html: { multipart: true } do |f|
     f.semantic_errors
+    f.inputs 'Referencia', :reference
     f.inputs 'Nombre', :name
     f.inputs 'Descripción', :description
     f.inputs 'Puntos', :points
