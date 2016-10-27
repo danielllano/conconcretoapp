@@ -1,7 +1,7 @@
 ActiveAdmin.register User, as: "Usuario" do
 
   permit_params :email, :password, :name, :last_name, :points, :address, :phone, :mobile_phone, :client_id, :apartment_number
-
+  actions :index, :show, :new, :create, :update, :edit
   menu priority: 2
 
   scope "Todos", :all, :default => true

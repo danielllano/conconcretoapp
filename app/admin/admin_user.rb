@@ -1,5 +1,6 @@
 ActiveAdmin.register AdminUser, as: "Administradores" do
   permit_params :email, :password, :password_confirmation
+  actions :index, :show, :new, :create, :update, :edit
 
   index do
     selectable_column
