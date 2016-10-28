@@ -6,8 +6,8 @@ ActiveAdmin.register Parameter, as: "Parametro" do
 
   index do
     column "Nombre", :key
-    column "Valor", :value
-    column "Unidades", :unit
+    column "Valor (Puntos)", :value
+    # column "Unidades", :unit
     column "Fecha de creación", :created_at
     column "Ultima modificación", :updated_at
     actions
@@ -16,8 +16,8 @@ ActiveAdmin.register Parameter, as: "Parametro" do
   show do
     attributes_table do
       row("Nombre") {|parameter| parameter.key }
-      row("Valor") {|parameter| parameter.value }
-      row("Unidades") {|parameter| parameter.unit }
+      row("Valor (Puntos)") {|parameter| parameter.value }
+      # row("Unidades") {|parameter| parameter.unit }
       row("Fecha de creación") {|parameter| parameter.created_at }
       row("Ultima modificación") {|parameter| parameter.updated_at }
     end
@@ -28,7 +28,7 @@ ActiveAdmin.register Parameter, as: "Parametro" do
     f.semantic_errors
     f.inputs 'Nombre', :key
     f.inputs 'Valor', :value
-    f.inputs 'Unidades', :unit
+    # f.inputs 'Unidades', :unit
     f.actions
   end
 
