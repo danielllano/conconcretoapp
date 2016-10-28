@@ -4,10 +4,12 @@ class ShoppingCartController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:update_cart]
 
   def show
+    @shopping_cart = ShoppingCart.create(user_id: @user.id) unless @shopping_cart
     @relevant_products = Product.all.order("points DESC").limit(3)
   end
 
   def add_product_to_cart
+    @shopping_cart = ShoppingCart.create(user_id: @user.id) unless @shopping_cart
     @product = Product.find(params[:product_id].to_i)
     @quantity = params[:quantity].to_i
     if @product.available_qty >= @quantity
@@ -92,7 +94,6 @@ class ShoppingCartController < ApplicationController
     def set_user_and_cart
       @user = User.find(current_user.id)
       @shopping_cart = ShoppingCart.find_by(user: @user)
-      @shopping_cart = ShoppingCart.create(user_id: @user.id) unless @shopping_cart
     end
 
 end
