@@ -1,5 +1,5 @@
 class PurchaseConfirmationMailer < ApplicationMailer
-  default from: %("Sistema de puntos Montebianco" <dalvarezv@conconcreto.com>)
+  default from: %("Montebianco Club House" <dalvarezv@conconcreto.com>)
 
   def user_confirmation_email(user, purchases)
     @user = user
