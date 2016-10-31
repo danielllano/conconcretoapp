@@ -9,11 +9,11 @@
             <%= form_for @user, html: { multipart: true } do |f| %>
               <% if @user.errors.any? %>
                 <div id="error_explanation">
-                  <h2><%= pluralize(@user.errors.count, "error") %> Usuario no pudo ser actualizado:</h2>
+                  <h5 class="red-text"><%= pluralize(@user.errors.count, "error") %>, usuario no pudo ser actualizado:</h5>
 
                   <ul>
                   <% @user.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
+                    <li class="red-text"><%= message %></li>
                   <% end %>
                   </ul>
                 </div>
@@ -52,6 +52,15 @@
               <div class="form-group col-sm-6 col-xs-12">
                 <%= f.label :mobile_phone, "Celular" %><br>
                 <%= f.text_field :mobile_phone, class: "form-control" %>
+              </div>
+
+              <div class="form-group col-sm-6 col-xs-12">
+                <%= f.label :password, "Contraseña" %><br>
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+              </div>
+
+              <div class="col-sm-12 col-xs-12">
+                <p>Si modificas tu contraseña deberás inciar sesión nuevamente con tu nueva contraseña</p>
               </div>
 
               <div class="form-group col-xs-12 edit-cta-group">

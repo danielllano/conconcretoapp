@@ -10,10 +10,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
-      redirect_to @user, notice: 'Usuario actualizado satisfactoriamente'
+    if params[:user][:password].present?
+      if @user.update_attributes(user_params)
+        redirect_to root_path, notice: 'Usuario actualizado satisfactoriamente. Inicia sesión con tu nueva contraseña'
+      else
+        render action: 'edit'
+      end
     else
-      render action: 'edit'
+      if @user.update_without_password(user_params)
+        redirect_to @user, notice: 'Usuario actualizado satisfactoriamente'
+      else
+        render action: 'edit'
+      end
     end
   end
 
@@ -25,7 +33,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email, :name, :last_name, :address, :phone, :mobile_phone, :avatar)
+      params.require(:user).permit(:email, :name, :last_name, :address, :phone, :mobile_phone, :avatar, :password)
     end
 
 end
