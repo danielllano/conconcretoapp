@@ -12,18 +12,18 @@ class ShoppingCartController < ApplicationController
     @shopping_cart = ShoppingCart.create(user_id: @user.id) unless @shopping_cart
     @product = Product.find(params[:product_id].to_i)
     @quantity = params[:quantity].to_i
-    if @product.available_qty >= @quantity
-      if @shopping_cart.add(@product, @product.points, @quantity)
-        flash[:notice] = 'Producto agregado al carrito satisfactoriamente'
-        redirect_to shopping_cart_show_path
-      else
-        flash[:error] = 'No se pudo agregar el producto al carrito'
-        redirect_to product_path(@product)
-      end
+    # if @product.available_qty >= @quantity
+    if @shopping_cart.add(@product, @product.points, @quantity)
+      flash[:notice] = 'Producto agregado al carrito satisfactoriamente'
+      redirect_to shopping_cart_show_path
     else
-      flash[:error] = 'El producto no esta disponible en la cantidad que deseas'
+      flash[:error] = 'No se pudo agregar el producto al carrito'
       redirect_to product_path(@product)
     end
+    # else
+    #   flash[:error] = 'El producto no esta disponible en la cantidad que deseas'
+    #   redirect_to product_path(@product)
+    # end
   end
 
 
@@ -46,20 +46,20 @@ class ShoppingCartController < ApplicationController
       redirect_to shopping_cart_show_path
     end
 
-    @shopping_cart.shopping_cart_items.each do |item|
-      product = Product.find(item.item_id)
-      if product.available_qty < item.quantity
-        available_quantities = false
-        flash[:error] = "El producto '#{product.name}' ya no está disponible en la cantidad deseada. Quedan #{product.available_qty} unidades disponibles"
-        redirect_to shopping_cart_show_path
-      end
-    end
+    # @shopping_cart.shopping_cart_items.each do |item|
+    #   product = Product.find(item.item_id)
+    #   if product.available_qty < item.quantity
+    #     available_quantities = false
+    #     flash[:error] = "El producto '#{product.name}' ya no está disponible en la cantidad deseada. Quedan #{product.available_qty} unidades disponibles"
+    #     redirect_to shopping_cart_show_path
+    #   end
+    # end
 
     if enough_points && available_quantities
       @user_purchases = []
       @shopping_cart.shopping_cart_items.each do |item|
         product = Product.find(item.item_id)
-        product.available_qty -= item.quantity
+        # product.available_qty -= item.quantity
         product.save
         @new_purchase = Purchase.create(user_id: @user.id, product_id: product.id, quantity: item.quantity, status: "Pendiente");
         @user_purchases.push(@new_purchase) if @new_purchase
