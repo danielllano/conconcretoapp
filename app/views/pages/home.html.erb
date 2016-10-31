@@ -1,5 +1,4 @@
 
-
 <div id="intro-slider">
   <div style="background-image: url(<%= asset_path 'intro1.jpg' %>);" class="item intro-item">
     <!-- <div class="overlay"></div> -->
@@ -73,43 +72,7 @@
   </div>
 </div>
 
-<!-- <div class="white-row">
-  <div class="container">
-    <section>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="heading">
-            <h4>Catálogo de Productos</h4>
-          </div>
-          <p class="text-center text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu sollicitudin eros, sed sollicitudin ligula.</p>
-        </div>
-      </div>
 
-      <div class="row products">
-        <% @products.each do |product| %>
-          <div class="col-md-3 col-xs-6">
-            <div class="product">
-              <div class="image">
-                <%= link_to product_path(product) do %>
-                  <%= image_tag product.image1.url(:medium), class: "img-responsive" %>
-                <% end %>
-                <div class="quick-view-button"><%= link_to 'Vista rápida', product_quick_view_path(id: product.id), remote: true, class:"btn btn-default btn-sm quick-view-btn" %></div>
-              </div>
-              <div class="card-text">
-                <p class="brand"><a href="#">Quiksilver</a></p>
-                <h3><%= link_to product.name, product_path(product) %></h3>
-                <p class="price"><%="#{product.points} puntos"%></p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-
-    </section>
-  </div>
-</div> -->
-
-<!-- <div style="background-image: url(<%= asset_path 'slider3.jpg' %>);" class="bar background-image-fixed color-white text-center"> -->
 <div class="grey-row bar text-center">
   <div class="container">
     <div class="row">
