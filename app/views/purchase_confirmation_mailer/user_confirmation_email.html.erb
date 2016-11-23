@@ -18,7 +18,7 @@
         width: 100%;
         height: 100px;
         background-color: #005c8a;
-        background-image: url(<%= asset_path 'project-frame.jpg'%>);
+        background-image: url(<%= attachments['project-frame.jpg'].url %>);
         background-size: cover;
         background-repeat: no-repeat;
       }
@@ -114,7 +114,7 @@
   <body>
     <div class="mail-wrapper">
       <div class="mail-header">
-        <%= image_tag("logo-white-small.png", class: "white-logo") %>
+        <%= image_tag(attachments['logo-white-small.png'].url, class: "white-logo") %>
       </div>
       <div class="yellow-frame"></div>
       <div class="mail-body">
@@ -134,7 +134,7 @@
       <div class="mail-footer">
         <p class="white-text width-control">Recuerda seguir acumulando tus puntos Montebianco <br> para que puedas seguir redimiéndolos.</p>
       </div>
-      <%= image_tag("living-room.png", class: "main-image") %>
+      <%= image_tag(attachments['living-room.png'].url, class: "main-image") %>
     </div>
 
   </body>
