@@ -2,11 +2,133 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style type="text/css" media="screen">
+      .mail-wrapper {
+        width: 90%;
+        max-width: 991px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-family: 'Roboto';
+        background-image: url(<%= asset_path 'fondo-01-mailer.jpg'%>);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .width-control{
+        width: 49%;
+        max-width: 494px;
+        text-align: center;
+        margin: 0 auto;
+        vertical-align: top;
+        margin-top: 20px;
+      }
+      .height-control {
+        min-height: 396px;
+      }
+      .text-left{
+        text-align: left;
+      }
+      .inline-block {
+        display: inline-block;
+      }
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 0;
+      }
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 0;
+        font-weight: 400;
+      }
+      p {
+        font-size: 1.1em;
+      }
+      .grey-text {
+        color: #575757;
+      }
+      .white-text {
+        color: #fff;
+      }
+      .mt-0 {
+        margin-top: 0px;
+      }
+      .border-white {
+        border-right: 2px solid #fff;
+      }
+      .padding-sides {
+        padding: 0 30px;
+      }
+      .mail-footer{
+        text-align: center;
+        padding: 10px 0;
+      }
+      .logo {
+        width: 170px;
+        margin-top: 10px;
+        margin-left: 30px;
+      }
+      .main-image{
+        width: 85%;
+      }
+      @media (max-width: 991px) {
+        .height-control {
+          min-height: 375px;
+        }
+        h2 {
+          font-size: 1.2em;
+        }
+      }
+      @media (max-width: 767px) {
+        h1 {
+          font-size: 1.8em;
+        }
+        .hidden-xs {
+          display: none;
+        }
+        .block-xs {
+          display: block;
+          padding-top: 30px;
+        }
+        .width-control {
+          width: 90%;
+        }
+        .text-left{
+          text-align: center !important
+        }
+        .logo {
+          width: 150px;
+          margin: 0;
+          text-align: center !important;
+        }
+      }
+
+    </style>
   </head>
   <body>
-    <h2>Tu redención ya está en camino</h2>
-    <p><%= @purchase.user.name %>, recientemente has adquirido por medio del sistema de puntos Montebianco <%= @purchase.quantity %> unidad(es) de <%= @purchase.product.name %>.</p>
-    <p>Esta redención ya esta en camino a la sala de negocios de Montebianco.</p>
-    <p>¡Felicidades!</p>
+    <div class="mail-wrapper">
+      <div class="mail-body height-control">
+        <div class="inline-block width-control border-white hidden-xs">
+          <%= image_tag("big-mailer-icon.png", class: "main-image") %>
+        </div>
+        <div class="inline-block width-control block-xs">
+          <h1 class="grey-text padding-sides">Hola <%= @purchase.user.name %></h1>
+          <h2 class="white-text padding-sides">Recientemente has adquirido por medio del sistema de puntos Montebianco <%= @purchase.quantity %> unidad(es) de <%= @purchase.product.name %>.</h2>
+          <p class="grey-text padding-sides">Esta redención ya esta en camino a la sala de negocios de Montebianco.</p>
+        </div>
+      </div>
+
+      <div class="mail-footer">
+        <div class="inline-block width-control mt-0 text-left">
+          <%= image_tag("logo-montebianco.png", class: "logo") %>
+        </div>
+        <div class="inline-block width-control mt-0 hidden-xs">
+          <h1 class="footer-h1 grey-text padding-sides">¡Felicitaciones!</h1>
+        </div>
+
+      </div>
+    </div>
+
   </body>
 </html>
