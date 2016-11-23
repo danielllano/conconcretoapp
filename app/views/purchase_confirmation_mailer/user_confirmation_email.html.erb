@@ -2,17 +2,140 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style type="text/css" media="screen">
+      .mail-wrapper {
+        width: 90%;
+        max-width: 991px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-family: 'Roboto';
+        background-color: #f4f4f4;
+      }
+      .mail-header {
+        width: 100%;
+        height: 100px;
+        background-color: #005c8a;
+        background-image: url(<%= asset_path 'project-frame.jpg'%>);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .mail-body {
+        text-align: center;
+      }
+      ul {
+        list-style-type: none;
+      }
+      h1 {
+        font-size: 3em;
+        margin-bottom: 0;
+      }
+      h2 {
+        font-size: 1.3em;
+        margin-bottom: 0;
+      }
+      p {
+        font-size: 1.1em;
+      }
+      .subtitle {
+        margin-top: 6px;
+        margin-bottom: 40px;
+      }
+      .width-control{
+        width: 50%;
+        max-width: 494px;
+        margin: 0 auto;
+      }
+      .grey-text {
+        color: #575757;
+      }
+      .lightgrey-text {
+        color: #888;
+      }
+      .blue-text {
+        color: #6bc5d5;
+      }
+      .white-text {
+        color: #fff;
+      }
+      .mt-0 {
+        margin-top: 0px;
+      }
+      .mt-70 {
+        margin-top: 70px;
+      }
+      .mb-15 {
+        margin-top: 5px;
+      }
+      .mail-footer{
+        background-color: #f1c40f;
+        text-align: center;
+        padding: 10px 0;
+      }
+      .white-logo {
+        width: 170px;
+        position: relative;
+        float: right;
+        top: 10px;
+        right: 30px;
+      }
+      .yellow-frame {
+        width: 100%;
+        height: 10px;
+        background-color: #f1c40f;
+      }
+      .main-image{
+        float: right;
+        height: 280px;
+        margin-top: -280px;
+      }
+      @media (max-width: 991px) {
+        .main-image{
+          height: 215px;
+          margin-top: -215px;
+        }
+      }
+      @media (max-width: 767px) {
+        .main-image{
+          height: 150px;
+          margin-top: -150px;
+        }
+      }
+      @media (max-width: 430px) {
+        .main-image{
+          display: none;
+        }
+      }
+
+    </style>
   </head>
   <body>
-    <h2>¡Felicidades <%= @user.name %>!</h2>
-    <h2>Tu redención ha sido aprobada con éxito.</h2>
-    <p>Has adquirido por medio del sistema de puntos Montebianco los siguientes productos:</p>
-    <ul>
-      <% @purchases.each do |p| %>
-        <li><%= p.product.name %> x <%= p.quantity %> unidad(es)</li>
-      <% end %>
-    </ul>
-    <p>Estos te serán enviados a la sala de negocios de Montebianco.</p>
-    <p>Recuerda seguir acumulando tus puntos Montebianco para que puedas seguir redimiéndolos.</p>
+    <div class="mail-wrapper">
+      <div class="mail-header">
+        <%= image_tag("logo-white-small.png", class: "white-logo") %>
+      </div>
+      <div class="yellow-frame"></div>
+      <div class="mail-body">
+        <div class="width-control">
+          <h1 class="title grey-text">¡Felicidades <%= @user.name %>!</h1>
+          <h2 class="subtitle grey-text">Tu redención ha sido aprobada con éxito.</h2>
+          <h2 class="blue-text mb-15">Has adquirido por medio del sistema de <b>puntos Montebianco</b> los siguientes productos:</h2>
+          <ul>
+            <% @purchases.each do |p| %>
+              <li class="lightgrey-text"><h2 class="mt-0"><%= p.product.name %> x <%= p.quantity %> unidad(es)</h2></li>
+            <% end %>
+          </ul>
+          <p class="mt-70">Los productos serán enviados a la sala de negocios de Montebianco.</p>
+        </div>
+      </div>
+
+      <div class="mail-footer">
+        <p class="white-text width-control">Recuerda seguir acumulando tus puntos Montebianco <br> para que puedas seguir redimiéndolos.</p>
+      </div>
+      <%= image_tag("living-room.png", class: "main-image") %>
+    </div>
+
   </body>
 </html>

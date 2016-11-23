@@ -1,5 +1,6 @@
 class PurchaseConfirmationMailer < ApplicationMailer
   default from: %("Montebianco Club House" <dalvarezv@conconcreto.com>)
+  default content_type: "text/html"
 
   def user_confirmation_email(user, purchases)
     @user = user
