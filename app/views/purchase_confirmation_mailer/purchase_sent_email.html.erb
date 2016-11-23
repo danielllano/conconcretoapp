@@ -12,7 +12,7 @@
         margin-left: 5%;
         margin-right: 5%;
         font-family: 'Roboto';
-        background-image: url(<%= asset_path 'fondo-01-mailer.jpg'%>);
+        background-image: url(<%= attachments['fondo-01-mailer.jpg'].url %>);
         background-size: cover;
         background-repeat: no-repeat;
       }
@@ -110,7 +110,7 @@
     <div class="mail-wrapper">
       <div class="mail-body height-control">
         <div class="inline-block width-control border-white hidden-xs">
-          <%= image_tag("big-mailer-icon.png", class: "main-image") %>
+          <%= image_tag(attachments['big-mailer-icon.png'].url, class: "main-image") %>
         </div>
         <div class="inline-block width-control block-xs">
           <h1 class="grey-text padding-sides">Hola <%= @purchase.user.name %></h1>
@@ -121,7 +121,7 @@
 
       <div class="mail-footer">
         <div class="inline-block width-control mt-0 text-left">
-          <%= image_tag("logo-montebianco.png", class: "logo") %>
+          <%= image_tag(attachments['logo-montebianco.png'].url, class: "logo") %>
         </div>
         <div class="inline-block width-control mt-0 hidden-xs">
           <h1 class="footer-h1 grey-text padding-sides">¡Felicitaciones!</h1>

@@ -17,6 +17,9 @@ class PurchaseConfirmationMailer < ApplicationMailer
   def purchase_sent_email(purchase)
     @user = purchase.user
     @purchase = purchase
+    attachments.inline['big-mailer-icon.png'] = File.read("#{Rails.root}/app/assets/images/big-mailer-icon.png")
+    attachments.inline['logo-montebianco.png'] = File.read("#{Rails.root}/app/assets/images/logo-montebianco.png")
+    attachments.inline['fondo-01-mailer.jpg'] = File.read("#{Rails.root}/app/assets/images/fondo-01-mailer.jpg")
     mail(to: @user.email, subject: 'Tu redención Montebianco está en camino')
   end
 end
