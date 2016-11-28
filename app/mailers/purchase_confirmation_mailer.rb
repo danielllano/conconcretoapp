@@ -5,7 +5,6 @@ class PurchaseConfirmationMailer < ApplicationMailer
   def user_confirmation_email(user, purchases)
     @user = user
     @purchases = purchases
-    attachments.inline['living-room.png'] = File.read("#{Rails.root}/app/assets/images/living-room.png")
     attachments.inline['logo-white-small.png'] = File.read("#{Rails.root}/app/assets/images/logo-white-small.png")
     attachments.inline['project-frame.jpg'] = File.read("#{Rails.root}/app/assets/images/project-frame.jpg")
     mail(to: @user.email, subject: 'Confirmación de redención de puntos')

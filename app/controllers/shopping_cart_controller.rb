@@ -69,7 +69,7 @@ class ShoppingCartController < ApplicationController
       @shopping_cart.clear
       flash[:notice] = 'Productos redimidos'
       PurchaseConfirmationMailer.user_confirmation_email(@user, @user_purchases).deliver_later
-      # PurchaseConfirmationMailer.admin_confirmation_email(@user, @user_purchases).deliver_later
+      PurchaseConfirmationMailer.admin_confirmation_email(@user, @user_purchases).deliver_later
       redirect_to pages_confirmation_path
     end
 

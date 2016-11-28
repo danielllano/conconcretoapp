@@ -86,16 +86,6 @@
         height: 10px;
         background-color: #f1c40f;
       }
-      .main-image{
-        float: right;
-        height: 170px;
-        margin-top: -170px;
-      }
-      @media (max-width: 991px) {
-        .main-image{
-          display: none;
-        }
-      }
     </style>
   </head>
   <body>
@@ -121,7 +111,6 @@
       <div class="mail-footer">
         <p class="white-text width-control">Recuerda seguir acumulando tus puntos Montebianco <br> para que puedas seguir redimiéndolos.</p>
       </div>
-      <%= image_tag(attachments['living-room.png'].url, class: "main-image") %>
     </div>
 
   </body>
